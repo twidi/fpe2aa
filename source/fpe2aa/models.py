@@ -39,7 +39,7 @@ class Application(models.Model):
             help_text="For the Application's url")
     description = models.TextField()
     link = models.URLField()
-    authors = models.ManyToManyField(Author)
+    authors = models.ManyToManyField(Author, null=True, blank=True)
     online = models.BooleanField(default=True,
             help_text="Set to False to remove this Application from the front")
     date_add = models.DateTimeField(auto_now_add=True)
