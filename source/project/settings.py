@@ -3,7 +3,6 @@
 import os
 PROJECT_PATH = os.path.dirname(__file__)
 BASE_PATH = os.path.normpath(os.path.join(PROJECT_PATH, '../'))
-print PROJECT_PATH, BASE_PATH, os.path.normpath(os.path.join(BASE_PATH, 'db.sqlite'))
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
