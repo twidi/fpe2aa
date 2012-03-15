@@ -1,11 +1,12 @@
 {% extends "base.html" %}
+{% load thumbnail %}
 
 {% block main %}
 <h1>Liste des applications</h1>
 
 <ul>
     {% for application in object_list %}
-        <li><a href="{% url application_detail slug=application.slug %}">{{ application.name }}</a></li>
+    <li><a href="{% url application_detail slug=application.slug %}"><img src="{% thumbnail application.screenshot 90x0 %}" /></a><a href="{% url application_detail slug=application.slug %}">{{ application.name }}</a></li>
     {% endfor %}
 </ul>
 {% endblock main %}
