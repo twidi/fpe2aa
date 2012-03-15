@@ -54,7 +54,7 @@ class Application(models.Model):
     date_add = models.DateTimeField(auto_now_add=True)
     platforms = models.ManyToManyField(Platform, null=True, blank=True)
     types = models.ManyToManyField(AppType, null=True, blank=True)
-    screenshot = models.ImageField(null=True, blank=True, upload_to='screeshots/')
+    screenshot = models.ImageField(null=True, blank=True, upload_to='screenshots/')
 
     def __unicode__(self):
         return self.name
