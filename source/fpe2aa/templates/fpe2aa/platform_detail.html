@@ -1,1 +1,11 @@
-{{ object }}
+<ul>
+    <li><a href="/">Retour à l'accueil</a></li>
+    <li><a href="{% url platform_list %}">Retour à la liste des plate-formes</a></li>
+</ul>
+
+<h1>Applications de la plate-forme "{{ object }}"</h1>
+<ul>
+    {% for application in object.application_set.all %}
+        <li><a href="{% url application_detail slug=application.slug %}">{{ application.name }}</a></li>
+    {% endfor %}
+</ul>

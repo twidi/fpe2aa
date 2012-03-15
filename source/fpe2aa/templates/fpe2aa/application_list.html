@@ -1,3 +1,5 @@
+<h1>Liste des applications</h1>
+
 <ul>
     {% for application in object_list %}
         <li><a href="{% url application_detail slug=application.slug %}">{{ application.name }}</a></li>
