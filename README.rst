@@ -9,4 +9,4 @@ WIP
 --
 Command to collect static files:
 
-    ./manage.py collectstatic -l --noinput -i less -i bs -i "*.sh" -i "*.json*"
+    ./manage.py collectstatic -l --noinput -i less -i bs -i "*.sh" -i "*.json*" -i "*.html"

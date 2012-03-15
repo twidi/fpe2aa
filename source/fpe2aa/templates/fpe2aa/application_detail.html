@@ -1,3 +1,6 @@
+{% extends "base.html" %}
+
+{% block main %}
 <ul>
     <li><a href="/">Retour à l'accueil / liste des applications</a></li>
 </ul>
@@ -24,3 +27,4 @@
         <li><a href="{% url platform_detail slug=platform.slug %}">{{ platform.name }}</a></li>
     {% endfor %}
 </ul>
+{% endblock main%}

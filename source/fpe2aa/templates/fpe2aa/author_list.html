@@ -1,3 +1,6 @@
+{% extends "base.html" %}
+
+{% block main %}
 <ul>
     <li><a href="/">Retour à l'accueil</a></li>
 </ul>
@@ -9,4 +12,4 @@
         <li><a href="{% url author_detail slug=author.slug %}">{{ author.name }}</a></li>
     {% endfor %}
 </ul>
-
+{% endblock main %}
