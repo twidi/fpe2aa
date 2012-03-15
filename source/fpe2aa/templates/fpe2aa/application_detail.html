@@ -1,0 +1,26 @@
+<ul>
+    <li><a href="/">Retour à l'accueil / liste des applications</a></li>
+</ul>
+
+<h1>{{ object }}</h1>
+
+<h2>Auteurs</h2>
+<ul>
+    {% for author in object.authors.all %}
+        <li><a href="{% url author_detail slug=author.slug %}">{{ author.name }}</a></li>
+    {% endfor %}
+</ul>
+
+<h2>Types</h2>
+<ul>
+    {% for type in object.types.all %}
+        <li><a href="{% url type_detail slug=type.slug %}">{{ type.name }}</a></li>
+    {% endfor %}
+</ul>
+
+<h2>Plate-formes</h2>
+<ul>
+    {% for platform in object.platforms.all %}
+        <li><a href="{% url platform_detail slug=platform.slug %}">{{ platform.name }}</a></li>
+    {% endfor %}
+</ul>
