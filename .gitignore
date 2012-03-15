@@ -12,4 +12,5 @@ pip-log.txt
 settings_rules.py
 dump*.json
 .sass-cache
+.tmp
 
