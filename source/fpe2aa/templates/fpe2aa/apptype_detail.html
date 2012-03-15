@@ -1,3 +1,6 @@
+{% extends "base.html" %}
+
+{% block main %}
 <ul>
     <li><a href="/">Retour à l'accueil</a></li>
     <li><a href="{% url type_list %}">Retour à la liste des types</a></li>
@@ -9,3 +12,4 @@
         <li><a href="{% url application_detail slug=application.slug %}">{{ application.name }}</a></li>
     {% endfor %}
 </ul>
+{% endblock main %}
