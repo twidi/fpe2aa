@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+<a href="{% url application_list %}">Voir toutes les applications</a>
+<section id="carousel" class="carousel">
+    <ul class="unstyled carousel-inner">
+        {% for application in object_list %}
+            <li class="item{% if forloop.first %} active{% endif %}">
+                <a href="{{ application.link }}" target="_blank" title="Aller sur {{ application.link }}"><img src="{{ application.screenshot.url }}" alt="Aperçu de l'application {{ application.name }}"/></a>
+                <article class="carousel-caption">
+                    <header>
+                        <h4>{% spaceless %}
+                            <a href="{{ application.link }}" target="_blank">{{ application.name }}</a>
+                            {% with authors=application.authors.all %}
+                                {% if authors %}
+                                    <span style="font-weight: normal">
+                                        (par {% for author in authors %}<a href="{% url author_detail slug=author.slug %}">{{ author }}</a>{% if not forloop.last %}, {% endif %}{% endfor %})
+                                    </span>
+                                {% endif %}
+                            {% endwith %}
+                            {% endspaceless %}</h4>
+                    </header>
+                    <section>
+                        <p>{{ application.description }}</p>
+                    </section>
+                </article>
+            </li>
+        {% endfor %}
+    </ul>
+    <a class="carousel-control left" href="#carousel" data-slide="prev">&lsaquo;</a>
+    <a class="carousel-control right" href="#carousel" data-slide="next">&rsaquo;</a>
+</section>
+
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#carousel').carousel({
+            interval: 15000,
+            pause: "hover"
+        });
+    });
+</script>
+{% endblock %}
