@@ -7,6 +7,12 @@
 
 <h1>{{ object }}</h1>
 
+<p>Lien : <a href="{{ object.link }}">{{ object.link }}</a></p>
+
+<p>{{ object.description }}</p>
+
+<img src="{{ application.screenshot.url }}" />
+
 <h2>Auteurs</h2>
 <ul>
     {% for author in object.authors.all %}

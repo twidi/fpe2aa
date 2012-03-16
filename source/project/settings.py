@@ -129,6 +129,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 
+    'easy_thumbnails',
     'fpe2aa',
 )
 
@@ -160,3 +161,7 @@ LOGGING = {
         },
     }
 }
+
+# thumbnails
+THUMBNAIL_SUBDIR = 'thumbs'
+THUMBNAIL_EXTENSION = 'png'
