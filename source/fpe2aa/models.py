@@ -2,6 +2,8 @@ import os
 
 from django.db import models
 
+from easy_thumbnails.fields import ThumbnailerImageField
+
 class Platform(models.Model):
     """
     A platform where an application can be found. Linked via Application with
@@ -62,13 +64,16 @@ class Application(models.Model):
     date_add = models.DateTimeField(auto_now_add=True)
     platforms = models.ManyToManyField(Platform, null=True, blank=True)
     types = models.ManyToManyField(AppType, null=True, blank=True)
-    screenshot = models.ImageField(null=True, blank=True, upload_to=make_application_screenshot_name)
+    screenshot = ThumbnailerImageField(null=True, blank=True,
+            upload_to=make_application_screenshot_name,
+            resize_source=dict(size=(1170, 0), crop='smart'),
+        )
 
     def make_screenshot_name(self, filename):
         """
         Use the slug for the screenshot filename
         """
-        return u''.join([self.slug, os.path.splitext(filename)[1]])
+        return os.path.join('screenshots', u''.join([self.slug, os.path.splitext(filename)[1]]))
 
     def __unicode__(self):
         return self.name
