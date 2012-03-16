@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+<a href="{% url application_list %}">Voir toutes les applications</a>
+<section id="carousel" class="carousel">
+    <ul class="unstyled carousel-inner">
+        {% for application in object_list %}
+            <li class="item{% if forloop.first %} active{% endif %}">
+                <img src="{{ application.screenshot.url }}" />
+            </li>
+        {% endfor %}
+    </ul>
+    <a class="carousel-control left" href="#carousel" data-slide="prev">&lsaquo;</a>
+    <a class="carousel-control right" href="#carousel" data-slide="next">&rsaquo;</a>
+</section>
+
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#carousel').carousel({
+            interval: 3000,
+            pause: "hover"
+        });
+    });
+</script>
+{% endblock %}
