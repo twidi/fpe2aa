@@ -28,6 +28,19 @@ class AppType(models.Model):
     def __unicode__(self):
         return self.name
 
+def image_name_from_slug(base_dir):
+    """
+    Function to use for "upload_to" of an ImageField, passing a
+    base directory which will be added after MEDIA_ROOT
+    """
+    def inner_func(instance, filename):
+        return os.path.join(
+                base_dir,
+                u''.join(
+                    [ instance.slug, os.path.splitext(filename)[1] ]
+                )
+            )
+    return inner_func
 
 class Author(models.Model):
     """
@@ -37,16 +50,13 @@ class Author(models.Model):
     name = models.CharField(max_length=255)
     slug = models.SlugField(max_length=255, help_text="For the Author's url")
     link = models.URLField()
+    logo = ThumbnailerImageField(null=True, blank=True,
+            upload_to=image_name_from_slug('logo'),
+            resize_source=dict(size=(70, 0), crop='smart'),
+        )
 
     def __unicode__(self):
         return self.name
-
-def make_application_screenshot_name(instance, filename):
-    """
-    It's not possible to directly call a method of Application, for "upload_to"
-    so this is a link to it
-    """
-    return instance.make_screenshot_name(filename)
 
 class Application(models.Model):
     """
@@ -65,15 +75,9 @@ class Application(models.Model):
     platforms = models.ManyToManyField(Platform, null=True, blank=True)
     types = models.ManyToManyField(AppType, null=True, blank=True)
     screenshot = ThumbnailerImageField(null=True, blank=True,
-            upload_to=make_application_screenshot_name,
+            upload_to=image_name_from_slug('screenshots'),
             resize_source=dict(size=(1170, 0), crop='smart'),
         )
-
-    def make_screenshot_name(self, filename):
-        """
-        Use the slug for the screenshot filename
-        """
-        return os.path.join('screenshots', u''.join([self.slug, os.path.splitext(filename)[1]]))
 
     def __unicode__(self):
         return self.name

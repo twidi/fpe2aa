@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load thumbnail %}
 
 {% block main %}
 <ul>
@@ -9,7 +10,7 @@
 
 <ul>
     {% for author in object_list %}
-        <li><a href="{% url author_detail slug=author.slug %}">{{ author.name }}</a></li>
+        <li><a href="{% url author_detail slug=author.slug %}"><img src="{% thumbnail author.logo 32x0 %}" /></a><a href="{% url author_detail slug=author.slug %}">{{ author.name }}</a></li>
     {% endfor %}
 </ul>
 {% endblock main %}
