@@ -161,3 +161,7 @@ LOGGING = {
         },
     }
 }
+
+# thumbnails
+THUMBNAIL_SUBDIR = 'thumbs'
+THUMBNAIL_EXTENSION = 'png'
