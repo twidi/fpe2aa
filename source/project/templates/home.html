@@ -10,7 +10,16 @@
                 <img src="{{ application.screenshot.url }}" />
                 <article class="carousel-caption">
                     <header>
-                        <h4>{{ application.name }}</h4>
+                        <h4>{% spaceless %}
+                            {{ application.name }}
+                            {% with authors=application.authors.all %}
+                                {% if authors %}
+                                    <span style="font-weight: normal">
+                                        (par {% for author in authors %}<a href="{% url author_detail slug=author.slug %}">{{ author }}</a>{% if not forloop.last %}, {% endif %}{% endfor %})
+                                    </span>
+                                {% endif %}
+                            {% endwith %}
+                            {% endspaceless %}</h4>
                     </header>
                     <section>
                         <p>{{ application.description }}</p>
