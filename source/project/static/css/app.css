@@ -97,6 +97,10 @@ figure img {
 .carousel-caption footer a {
   text-decoration: underline;
 }
+.carousel-caption .btn {
+  font-size: 13px;
+  color: #333;
+}
 .app-list > li {
   -webkit-box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);

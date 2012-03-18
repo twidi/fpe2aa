@@ -19,7 +19,10 @@
             {% endspaceless %}</h4>
     </header>
     <section>
-        <p>{{ application.description }}</p>
+        <p>
+            {{ application.description }}
+            <a href="{{ application.link }}" target="_blank" class="btn btn-mini">Aller &raquo;</a>
+        </p>
     </section>
     <footer>
         {% if platforms %}
