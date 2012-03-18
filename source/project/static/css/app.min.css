@@ -4,12 +4,14 @@
 .input-block-level{display:block;width:100%;min-height:28px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;}
 html{overflow-y:scroll;}
 figure{margin:0;}figure a{display:block;}
+figure img{max-width:100%;}
 .carousel-caption h4{margin-bottom:1ex;}
 .carousel-caption span{font-weight:normal;font-size:smaller;}.carousel-caption span a{text-decoration:underline;}
 .carousel-caption a{color:white;}
-.app-list>li{-webkit-box-shadow:4px 4px 8px rgba(0, 0, 0, 0.5);-moz-box-shadow:4px 4px 8px rgba(0, 0, 0, 0.5);box-shadow:4px 4px 8px rgba(0, 0, 0, 0.5);height:151px;overflow:hidden;position:relative;display:inline-block;padding:5px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;background:black;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;}.app-list>li img{max-width:100%;}
-.app-list>li article{padding:5px 10px;}.app-list>li article h4{margin-bottom:0;}
+.app-list>li{-webkit-box-shadow:4px 4px 8px rgba(0, 0, 0, 0.5);-moz-box-shadow:4px 4px 8px rgba(0, 0, 0, 0.5);box-shadow:4px 4px 8px rgba(0, 0, 0, 0.5);position:relative;display:inline-block;padding:5px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;background:black;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;margin-bottom:20px;}.app-list>li img{max-width:100%;}
+.app-list>li article{padding:5px 10px;-webkit-border-radius:0 0 5px 5px;-moz-border-radius:0 0 5px 5px;border-radius:0 0 5px 5px;}.app-list>li article h4{margin-bottom:0;}
 .app-list>li article span a{text-decoration:none;}
 .app-list>li article section{display:none;}
-.app-list>li:hover{overflow:visible;}.app-list>li:hover article{background:rgba(0, 0, 0, 0.9);-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;padding-top:10px;bottom:auto;top:0;}.app-list>li:hover article h4{margin-bottom:1ex;}.app-list>li:hover article h4 a{text-decoration:underline;}
+.app-list>li:hover article{background:rgba(0, 0, 0, 0.9);-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;padding-top:10px;bottom:auto;top:0;}.app-list>li:hover article h4{margin-bottom:1ex;}.app-list>li:hover article h4 a{text-decoration:underline;}
 .app-list>li:hover article section{display:block;}
+@media (min-width:1200px){.app-list>li{margin-bottom:30px;}}

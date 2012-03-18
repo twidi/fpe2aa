@@ -36,6 +36,9 @@ figure {
 figure a {
   display: block;
 }
+figure img {
+  max-width: 100%;
+}
 .carousel-caption h4 {
   margin-bottom: 1ex;
 }
@@ -53,8 +56,6 @@ figure a {
   -webkit-box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
-  height: 151px;
-  overflow: hidden;
   position: relative;
   display: inline-block;
   padding: 5px;
@@ -66,12 +67,16 @@ figure a {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
+  margin-bottom: 20px;
 }
 .app-list > li img {
   max-width: 100%;
 }
 .app-list > li article {
   padding: 5px 10px;
+  -webkit-border-radius: 0 0 5px 5px;
+  -moz-border-radius: 0 0 5px 5px;
+  border-radius: 0 0 5px 5px;
 }
 .app-list > li article h4 {
   margin-bottom: 0;
@@ -81,9 +86,6 @@ figure a {
 }
 .app-list > li article section {
   display: none;
-}
-.app-list > li:hover {
-  overflow: visible;
 }
 .app-list > li:hover article {
   background: rgba(0, 0, 0, 0.9);
@@ -102,4 +104,9 @@ figure a {
 }
 .app-list > li:hover article section {
   display: block;
+}
+@media (min-width: 1200px) {
+  .app-list > li {
+    margin-bottom: 30px;
+  }
 }

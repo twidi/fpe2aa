@@ -10,6 +10,9 @@ figure {
     a {
         display: block;
     }
+    img {
+        max-width: 100%;
+    }
 }
 
 .carousel-caption {
@@ -31,19 +34,19 @@ figure {
 .app-list {
     > li {
         .box-shadow(4px 4px 8px rgba(0, 0, 0, 0.5));
-        height: 151px;
-        overflow: hidden;
         position: relative;
         display: inline-block;
         padding: 5px;
         .box-sizing(border-box);
         background: black;
         .border-radius(5px);
+        margin-bottom: 20px;
         img {
             max-width: 100%;
         }
         article {
             padding: 5px 10px;
+            .border-radius(0 0 5px 5px);
             h4 {
                 margin-bottom: 0;
             }
@@ -55,7 +58,6 @@ figure {
             }
         }
         &:hover {
-            overflow: visible;
             article {
                 background: rgba(0, 0, 0, 0.9);
                 .border-radius(5px);
@@ -72,6 +74,14 @@ figure {
                     display: block;
                 }
             }
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .app-list {
+        > li {
+            margin-bottom: 30px;
         }
     }
 }
