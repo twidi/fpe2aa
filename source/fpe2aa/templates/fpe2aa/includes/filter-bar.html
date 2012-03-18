@@ -5,7 +5,7 @@
     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Auteurs<b class="caret"></b></a>
     <ul class="dropdown-menu">
         {% for author in authors %}
-            <li{% if filter_type == 'author' and filter == author.slug %} class="active"{% endif %}><a href="{% url author_detail slug=author.slug %}"><img src="{% thumbnail author.logo 0x18 %}" /> {{ author }}</a></li>
+            <li{% if filter_type == 'author' and filter == author.slug %} class="active"{% endif %}><a href="{{ author.get_absolute_url }}"><img src="{% thumbnail author.logo 0x18 %}" /> {{ author }}</a></li>
         {% endfor %}
     </ul>
 </li>
@@ -14,7 +14,7 @@
     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Plate-formes<b class="caret"></b></a>
     <ul class="dropdown-menu">
         {% for platform in platforms %}
-            <li{% if filter_type == 'platform' and filter == platform.slug %} class="active"{% endif %}><a href="{% url platform_detail slug=platform.slug %}">{{ platform }}</a></li>
+            <li{% if filter_type == 'platform' and filter == platform.slug %} class="active"{% endif %}><a href="{{ platform.get_absolute_url }}">{{ platform }}</a></li>
         {% endfor %}
     </ul>
 </li>
@@ -23,7 +23,7 @@
     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Types<b class="caret"></b></a>
     <ul class="dropdown-menu">
         {% for type in types %}
-            <li{% if filter_type == 'type' and filter == type.slug %} class="active"{% endif %}><a href="{% url type_detail slug=type.slug %}">{{ type }}</a></li>
+            <li{% if filter_type == 'type' and filter == type.slug %} class="active"{% endif %}><a href="{{ type.get_absolute_url }}">{{ type }}</a></li>
         {% endfor %}
     </ul>
 </li>

@@ -13,25 +13,28 @@
             <a href="{{ application.link }}" target="_blank">{{ application.name }}</a>
             {% if authors %}
                 <span>
-                    (par {% for author in authors %}<a href="{% url author_detail slug=author.slug %}">{{ author }}</a>{% if not forloop.last %}, {% endif %}{% endfor %})
+                    (par {% for author in authors %}<a href="{{ author.get_absolute_url }}">{{ author }}</a>{% if not forloop.last %}, {% endif %}{% endfor %})
                 </span>
             {% endif %}
             {% endspaceless %}</h4>
     </header>
     <section>
-        <p>{{ application.description }}</p>
+        <p>
+            {{ application.description }}
+            <a href="{{ application.link }}" target="_blank" class="btn btn-mini">Aller &raquo;</a>
+        </p>
     </section>
     <footer>
         {% if platforms %}
             <div>
                 <b>Plate-forme{{ platforms|length|pluralize }}</b> :
-                {% for platform in platforms %}<a href="{% url platform_detail slug=platform.slug %}">{{ platform }}</a>{% if not forloop.last %}, {% endif %}{% endfor %}
+                {% for platform in platforms %}<a href="{{ platform.get_absolute_url }}">{{ platform }}</a>{% if not forloop.last %}, {% endif %}{% endfor %}
             </div>
         {% endif %}
         {% if types %}
             <div>
                 <b>Type{{ types|length|pluralize }}</b> :
-                {% for type in types %}<a href="{% url type_detail slug=type.slug %}">{{ type }}</a>{% if not forloop.last %}, {% endif %}{% endfor %}
+                {% for type in types %}<a href="{{ type.get_absolute_url }}">{{ type }}</a>{% if not forloop.last %}, {% endif %}{% endfor %}
             </div>
         {% endif %}
     </footer>

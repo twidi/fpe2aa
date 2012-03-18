@@ -51,6 +51,20 @@ html {
 .navbar .dropdown-menu li img {
   float: right;
 }
+.container > header .well {
+  overflow: auto;
+}
+.container > header .well h1 {
+  margin-bottom: 0.5ex;
+}
+.container > header .well h1 small {
+  display: block;
+  line-height: 30px;
+}
+.container > header .well a.btn {
+  font-weight: bold;
+  float: right;
+}
 figure {
   margin: 0;
 }
@@ -82,6 +96,10 @@ figure img {
 }
 .carousel-caption footer a {
   text-decoration: underline;
+}
+.carousel-caption .btn {
+  font-size: 13px;
+  color: #333;
 }
 .app-list > li {
   -webkit-box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
@@ -137,6 +155,12 @@ figure img {
 .app-list > li:hover article section,
 .app-list > li:hover article footer {
   display: block;
+}
+@media (min-width: 1200px) {
+  .container > header .well h1 small {
+    display: inline;
+    line-height: 36px;
+  }
 }
 @media (min-width: 1200px) {
   .app-list > li {
