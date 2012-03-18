@@ -9,7 +9,6 @@ html{overflow-y:scroll;}
 .navbar .navbar-text{line-height:39px;}
 .navbar .nav .open.active,.navbar .nav .active>.dropdown-toggle{background:#222;}
 .navbar .dropdown-menu li img{float:right;}
-.container>header{background:url("../img/header.png") no-repeat 50% 0 transparent;padding-top:50px;}
 figure{margin:0;}figure a{display:block;}
 figure img{max-width:100%;}
 .carousel-caption{color:white;}.carousel-caption h4{margin-bottom:1ex;}
