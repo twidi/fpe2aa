@@ -20,6 +20,10 @@ class Platform(models.Model):
     def __unicode__(self):
         return self.name
 
+    @models.permalink
+    def get_absolute_url(self):
+        return ('platform_detail', (), dict(slug=self.slug))
+
 
 class AppType(models.Model):
     """
@@ -34,6 +38,11 @@ class AppType(models.Model):
     def __unicode__(self):
         return self.name
 
+    @models.permalink
+    def get_absolute_url(self):
+        return ('type_detail', (), dict(slug=self.slug))
+
+
 def image_name_from_slug(base_dir):
     """
     Function to use for "upload_to" of an ImageField, passing a
@@ -47,6 +56,7 @@ def image_name_from_slug(base_dir):
                 )
             )
     return inner_func
+
 
 class Author(models.Model):
     """
@@ -65,6 +75,11 @@ class Author(models.Model):
 
     def __unicode__(self):
         return self.name
+
+    @models.permalink
+    def get_absolute_url(self):
+        return ('author_detail', (), dict(slug=self.slug))
+
 
 class Application(models.Model):
     """
