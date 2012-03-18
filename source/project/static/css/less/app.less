@@ -6,17 +6,24 @@ html {
 }
 
 /* Tweak twitter-bootstrap navbar */
-.navbar .nav-collapse.in {
-    height: auto !important;
-}
-.navbar .dropdown .dropdown-menu {
-    display: none;
-}
-.navbar .dropdown.open .dropdown-menu {
-    display: block;
-}
-.navbar .navbar-text {
-    line-height: 39px;
+.navbar {
+    .nav-collapse.in {
+        height: auto !important;
+    }
+    .dropdown {
+        .dropdown-menu {
+            display: none;
+        }
+        &.open .dropdown-menu {
+            display: block;
+        }
+    }
+    .navbar-text {
+        line-height: 39px;
+    }
+    .nav .open.active, .nav .active > .dropdown-toggle {
+        background: #222;
+    }
 }
 /* End of tweak */
 

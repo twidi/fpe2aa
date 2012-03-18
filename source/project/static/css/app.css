@@ -43,6 +43,10 @@ html {
 .navbar .navbar-text {
   line-height: 39px;
 }
+.navbar .nav .open.active,
+.navbar .nav .active > .dropdown-toggle {
+  background: #222;
+}
 /* End of tweak */
 .container > header {
   background: url("../img/header.png") no-repeat 50% 0 transparent;
