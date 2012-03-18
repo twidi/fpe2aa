@@ -1,13 +1,12 @@
 {% extends "base.html" %}
 
+
+{% block header %}
+<section class="well">
+<h1>Applications de type <em>{{ object }}</em></h1>
+</section>
+{% endblock %}
+
 {% block main %}
-<ul>
-    <li><a href="/">Retour à l'accueil</a></li>
-    <li><a href="{% url type_list %}">Retour à la liste des types</a></li>
-</ul>
-
-<h1>Applications de type "{{ object }}"</h1>
-
-{% include "fpe2aa/includes/applications.html" with applications=object.application_set.all %}
-
+    {% include "fpe2aa/includes/applications.html" with applications=object.application_set.all %}
 {% endblock main %}
