@@ -1,31 +1,26 @@
-<nav class="btn-toolbar">
-    Filtrer par :
+<li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Auteurs<b class="caret"></b></a>
+    <ul class="dropdown-menu">
+        {% for author in authors %}
+            <li><a href="{% url author_detail slug=author.slug %}">{{ author }}</a></li>
+        {% endfor %}
+    </ul>
+</li>
 
-    <div class="btn-group">
-        <button class="btn dropdown-toggle" data-toggle="dropdown">Auteur <span class="caret"></span></button>
-        <ul class="dropdown-menu">
-            {% for author in authors %}
-                <li><a href="{% url author_detail slug=author.slug %}">{{ author }}</a></li>
-            {% endfor %}
-        </ul>
-    </div>
+<li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Plate-formes<b class="caret"></b></a>
+    <ul class="dropdown-menu">
+        {% for platform in platforms %}
+            <li><a href="{% url platform_detail slug=platform.slug %}">{{ platform }}</a></li>
+        {% endfor %}
+    </ul>
+</li>
 
-    <div class="btn-group">
-        <button class="btn dropdown-toggle" data-toggle="dropdown">Plate-forme <span class="caret"></span></button>
-        <ul class="dropdown-menu">
-            {% for platform in platforms %}
-                <li><a href="{% url platform_detail slug=platform.slug %}">{{ platform }}</a></li>
-            {% endfor %}
-        </ul>
-    </div>
-
-    <div class="btn-group">
-        <button class="btn dropdown-toggle" data-toggle="dropdown">Type <span class="caret"></span></button>
-        <ul class="dropdown-menu">
-            {% for type in types %}
-                <li><a href="{% url type_detail slug=type.slug %}">{{ type }}</a></li>
-            {% endfor %}
-        </ul>
-    </div>
-</nav>
-
+<li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Types<b class="caret"></b></a>
+    <ul class="dropdown-menu">
+        {% for type in types %}
+            <li><a href="{% url type_detail slug=type.slug %}">{{ type }}</a></li>
+        {% endfor %}
+    </ul>
+</li>

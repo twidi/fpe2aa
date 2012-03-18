@@ -3,6 +3,10 @@
 .hide-text{overflow:hidden;text-indent:100%;white-space:nowrap;}
 .input-block-level{display:block;width:100%;min-height:28px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;}
 html{overflow-y:scroll;}
+.navbar .nav-collapse.in{height:auto !important;}
+.navbar .dropdown .dropdown-menu{display:none;}
+.navbar .dropdown.open .dropdown-menu{display:block;}
+.navbar .navbar-text{line-height:39px;}
 .container>header{background:url("../img/header.png") no-repeat 50% 0 transparent;padding-top:50px;}
 figure{margin:0;}figure a{display:block;}
 figure img{max-width:100%;}
