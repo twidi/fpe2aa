@@ -7,6 +7,5 @@ urlpatterns = patterns('',
     url(r'^plateforme/(?P<slug>[\w\/\-]+)/$', DetailView.as_view(model=Platform), name='platform_detail'),
     url(r'^auteur/(?P<slug>[\w\/\-]+)/$', DetailView.as_view(model=Author), name='author_detail'),
     url(r'^applications/$', ListView.as_view(model=Application), name='application_list'),
-    url(r'^(?P<slug>[\w\/\-]+)/$', DetailView.as_view(model=Application), name='application_detail'),
 )
 
