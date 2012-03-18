@@ -7,6 +7,8 @@
 </ul>
 <h1>Liste des applications</h1>
 
+{% include "fpe2aa/includes/filter-bar.html" %}
+
 <ul class="unstyled app-list">
     {% for application in object_list %}
         <li class="span3">
