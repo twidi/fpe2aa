@@ -1,4 +1,25 @@
+@import "mixins.less";
+
+
+html {
+    overflow-y: scroll;
+}
+
+figure {
+    margin: 0;
+    a {
+        display: block;
+    }
+    img {
+        max-width: 100%;
+    }
+}
+
 .carousel-caption {
+    color: white;
+    h4 {
+        margin-bottom: 1ex;
+    }
     span {
         font-weight: normal;
         font-size: smaller;
@@ -8,5 +29,67 @@
     }
     a {
         color: white;
+    }
+    footer {
+        border-top: solid #666 1px;
+        padding-top: 5px;
+        a {
+            text-decoration: underline;
+        }
+    }
+}
+
+.app-list {
+    > li {
+        .box-shadow(4px 4px 8px rgba(0, 0, 0, 0.5));
+        position: relative;
+        display: inline-block;
+        padding: 5px;
+        .box-sizing(border-box);
+        background: black;
+        .border-radius(5px);
+        margin-bottom: 20px;
+        img {
+            max-width: 100%;
+        }
+        article {
+            padding: 5px 10px;
+            .border-radius(0 0 5px 5px);
+            h4 {
+                margin-bottom: 0;
+            }
+            span a {
+                text-decoration: none;
+            }
+            section, footer {
+               display: none
+            }
+        }
+        &:hover {
+            article {
+                background: rgba(0, 0, 0, 0.9);
+                .border-radius(5px);
+                padding-top: 10px;
+                bottom: auto;
+                top: 0;
+                h4 {
+                    margin-bottom: 1ex;
+                    a {
+                        text-decoration: underline;
+                    }
+                }
+                section, footer {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .app-list {
+        > li {
+            margin-bottom: 30px;
+        }
     }
 }

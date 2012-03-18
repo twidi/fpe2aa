@@ -1,0 +1,40 @@
+{% load thumbnail %}
+<figure>
+    <a href="{{ application.link }}" target="_blank" title="Aller sur {{ application.link }}">
+        {% with img=application.screenshot %}
+        <img src="{% if mode == "full" %}{{ img.url }}{% else %}{% thumbnail img 260x0 %}{% endif %}" alt="Aperçu de l'application {{ application.name }}"/>
+        {% endwith %}
+    </a>
+</figure>
+{% with authors=application.authors.all platforms=application.platforms.all types=application.types.all %}
+<article class="carousel-caption">
+    <header>
+        <h4>{% spaceless %}
+            <a href="{{ application.link }}" target="_blank">{{ application.name }}</a>
+            {% if authors %}
+                <span>
+                    (par {% for author in authors %}<a href="{% url author_detail slug=author.slug %}">{{ author }}</a>{% if not forloop.last %}, {% endif %}{% endfor %})
+                </span>
+            {% endif %}
+            {% endspaceless %}</h4>
+    </header>
+    <section>
+        <p>{{ application.description }}</p>
+    </section>
+    <footer>
+        {% if platforms %}
+            <div>
+                <b>Plate-forme{{ platforms|length|pluralize }}</b> :
+                {% for platform in platforms %}<a href="{% url platform_detail slug=platform.slug %}">{{ platform }}</a>{% if not forloop.last %}, {% endif %}{% endfor %}
+            </div>
+        {% endif %}
+        {% if types %}
+            <div>
+                <b>Type{{ types|length|pluralize }}</b> :
+                {% for type in types %}<a href="{% url type_detail slug=type.slug %}">{{ type }}</a>{% if not forloop.last %}, {% endif %}{% endfor %}
+            </div>
+        {% endif %}
+    </footer>
+</article>
+{% endwith %}
+
