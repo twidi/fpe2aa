@@ -4,6 +4,8 @@ from django.db import models
 
 from easy_thumbnails.fields import ThumbnailerImageField
 
+from fpe2aa.managers import LowerNameMOrderedanager
+
 class Platform(models.Model):
     """
     A platform where an application can be found. Linked via Application with
@@ -12,6 +14,8 @@ class Platform(models.Model):
     """
     name = models.CharField(max_length=255)
     slug = models.SlugField(max_length=255, help_text="For the Platform's url")
+
+    objects = LowerNameMOrderedanager()
 
     def __unicode__(self):
         return self.name
@@ -24,6 +28,8 @@ class AppType(models.Model):
     """
     name = models.CharField(max_length=255)
     slug = models.SlugField(max_length=255, help_text="For the AppType's url")
+
+    objects = LowerNameMOrderedanager()
 
     def __unicode__(self):
         return self.name
@@ -55,6 +61,8 @@ class Author(models.Model):
             resize_source=dict(size=(70, 0), crop='smart'),
         )
 
+    objects = LowerNameMOrderedanager()
+
     def __unicode__(self):
         return self.name
 
@@ -78,6 +86,8 @@ class Application(models.Model):
             upload_to=image_name_from_slug('screenshots'),
             resize_source=dict(size=(1170, 0), crop='smart'),
         )
+
+    objects = LowerNameMOrderedanager()
 
     def __unicode__(self):
         return self.name

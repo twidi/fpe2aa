@@ -1,5 +1,6 @@
 # Django settings for project project.
 
+import django.conf.global_settings as DEFAULT_SETTINGS
 import os
 PROJECT_PATH = os.path.dirname(__file__)
 BASE_PATH = os.path.normpath(os.path.join(PROJECT_PATH, '../'))
@@ -130,6 +131,10 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'easy_thumbnails',
     'fpe2aa',
+)
+
+TEMPLATE_CONTEXT_PROCESSORS = DEFAULT_SETTINGS.TEMPLATE_CONTEXT_PROCESSORS + (
+    'fpe2aa.context_processors.filters',
 )
 
 # A sample logging configuration. The only tangible logging
