@@ -7,11 +7,6 @@
 </ul>
 <h1>Liste des applications</h1>
 
-<ul class="unstyled app-list">
-    {% for application in object_list %}
-        <li class="span3">
-            {% include "fpe2aa/includes/application-widget.html" %}
-        </li>
-    {% endfor %}
-</ul>
+{% include "fpe2aa/includes/applications.html" with applications=object_list %}
+
 {% endblock main %}

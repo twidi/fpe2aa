@@ -8,11 +8,6 @@
 
 <h1>Applications de type "{{ object }}"</h1>
 
-<ul class="unstyled app-list">
-    {% for application in object.application_set.all %}
-        <li class="span3">
-            {% include "fpe2aa/includes/application-widget.html" %}
-        </li>
-    {% endfor %}
-</ul>
+{% include "fpe2aa/includes/applications.html" with applications=object.application_set.all %}
+
 {% endblock main %}
