@@ -31,10 +31,24 @@ html {
     float: right;
 }
 
-//.container > header {
+.container > header {
 //    background: url("../img/header.png") no-repeat 50% 0 transparent;
 //    padding-top: 50px;
-//}
+    .well {
+        overflow: auto;
+        h1 {
+            margin-bottom: 0.5ex;
+            small {
+                display: block;
+                line-height: 30px;
+            }
+        }
+        a.btn {
+            font-weight: bold;
+            float: right;
+        }
+    }
+}
 
 figure {
     margin: 0;
@@ -114,6 +128,13 @@ figure {
                 }
             }
         }
+    }
+}
+
+@media (min-width: 1200px) {
+    .container > header .well h1 small {
+        display: inline;
+        line-height: 36px;
     }
 }
 

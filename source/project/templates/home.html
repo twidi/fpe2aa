@@ -1,9 +1,28 @@
 {% extends "base.html" %}
 
+{% block header %}
+<section class="well">
+    <a class="btn btn-inverse" href="{% url application_list %}">Voir toutes les applications &raquo;</a>
+    <h1>
+        Présid-apps
+        <small>Une sélection non exhaustive d'applications en relation avec la présidentielle 2012.</small>
+    </h1>
+    <p>
+        De nombreux sites fleurissent ces temps-ci, permettant une approche différente de la présidentielle.
+    </p>
+    <p>
+        Parmi ces sites, généralement édités par des journaux, nous retrouvons des tests de connaissances, des aides au choix, des analyses des discours des candidats, etc.
+    </p>
+    <p>
+        Vous retrouverez ces différentes applications dans le carousel ci-dessous, ou bien en utilisant les filtres que nous vous proposons en haut à droite.
+    </p>
+</section>
+{% endblock %}
+
 {% block main %}
 
-<a href="{% url application_list %}">Voir toutes les applications</a>
-<section id="carousel" class="carousel">
+<div class="row">
+<section id="carousel" class="carousel span12">
     <ul class="unstyled carousel-inner">
         {% for application in object_list %}
             <li class="item{% if forloop.first %} active{% endif %}">
@@ -14,6 +33,7 @@
     <a class="carousel-control left" href="#carousel" data-slide="prev">&lsaquo;</a>
     <a class="carousel-control right" href="#carousel" data-slide="next">&rsaquo;</a>
 </section>
+</div>
 
 {% endblock %}
 
