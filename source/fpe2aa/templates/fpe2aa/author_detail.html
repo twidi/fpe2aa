@@ -7,9 +7,12 @@
 </ul>
 
 <h1>Applications de "{{ object }}" <img src="{{ author.logo.url }}" /></h1>
-<ul>
+
+<ul class="unstyled app-list">
     {% for application in object.application_set.all %}
-        <li><a href="{% url application_detail slug=application.slug %}">{{ application.name }}</a></li>
+        <li class="span3">
+            {% include "fpe2aa/include-application.html" %}
+        </li>
     {% endfor %}
 </ul>
 {% endblock main %}
