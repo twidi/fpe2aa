@@ -1,4 +1,21 @@
+@import "mixins.less";
+
+
+html {
+    overflow-y: scroll;
+}
+
+figure {
+    margin: 0;
+    a {
+        display: block;
+    }
+}
+
 .carousel-caption {
+    h4 {
+        margin-bottom: 1ex;
+    }
     span {
         font-weight: normal;
         font-size: smaller;
@@ -8,5 +25,51 @@
     }
     a {
         color: white;
+    }
+}
+
+.app-list {
+    > li {
+        .box-shadow(4px 4px 8px rgba(0, 0, 0, 0.5));
+        height: 151px;
+        overflow: hidden;
+        position: relative;
+        display: inline-block;
+        padding: 5px;
+        .box-sizing(border-box);
+        background: black;
+        .border-radius(5px);
+        img {
+            max-width: 100%;
+        }
+        article {
+            padding: 5px 10px;
+            h4 {
+                margin-bottom: 0;
+            }
+            span a {
+                text-decoration: none;
+            }
+            section {
+               display: none
+            }
+        }
+        &:hover {
+            overflow: visible;
+            article {
+                padding-top: 10px;
+                bottom: auto;
+                top: 0;
+                h4 {
+                    margin-bottom: 1ex;
+                    a {
+                        text-decoration: underline;
+                    }
+                }
+                section {
+                    display: block;
+                }
+            }
+        }
     }
 }

@@ -1,0 +1,27 @@
+{% load thumbnail %}
+<figure>
+    <a href="{{ application.link }}" target="_blank" title="Aller sur {{ application.link }}">
+        {% with img=application.screenshot %}
+        <img src="{% if mode == "full" %}{{ img.url }}{% else %}{% thumbnail img 260x0 %}{% endif %}" alt="Aperçu de l'application {{ application.name }}"/>
+        {% endwith %}
+    </a>
+</figure>
+<article class="carousel-caption">
+    <header>
+        <h4>{% spaceless %}
+            <a href="{{ application.link }}" target="_blank">{{ application.name }}</a>
+            {% with authors=application.authors.all %}
+                {% if authors %}
+                    <span style="font-weight: normal">
+                        (par {% for author in authors %}<a href="{% url author_detail slug=author.slug %}">{{ author }}</a>{% if not forloop.last %}, {% endif %}{% endfor %})
+                    </span>
+                {% endif %}
+            {% endwith %}
+            {% endspaceless %}</h4>
+    </header>
+    <section>
+        <p>{{ application.description }}</p>
+        <p>{{ application.description }}</p>
+    </section>
+</article>
+
