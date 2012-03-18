@@ -16,6 +16,7 @@ figure {
 }
 
 .carousel-caption {
+    color: white;
     h4 {
         margin-bottom: 1ex;
     }
@@ -28,6 +29,13 @@ figure {
     }
     a {
         color: white;
+    }
+    footer {
+        border-top: solid #666 1px;
+        padding-top: 5px;
+        a {
+            text-decoration: underline;
+        }
     }
 }
 
@@ -53,7 +61,7 @@ figure {
             span a {
                 text-decoration: none;
             }
-            section {
+            section, footer {
                display: none
             }
         }
@@ -70,7 +78,7 @@ figure {
                         text-decoration: underline;
                     }
                 }
-                section {
+                section, footer {
                     display: block;
                 }
             }

@@ -39,6 +39,9 @@ figure a {
 figure img {
   max-width: 100%;
 }
+.carousel-caption {
+  color: white;
+}
 .carousel-caption h4 {
   margin-bottom: 1ex;
 }
@@ -51,6 +54,13 @@ figure img {
 }
 .carousel-caption a {
   color: white;
+}
+.carousel-caption footer {
+  border-top: solid #666 1px;
+  padding-top: 5px;
+}
+.carousel-caption footer a {
+  text-decoration: underline;
 }
 .app-list > li {
   -webkit-box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
@@ -84,7 +94,8 @@ figure img {
 .app-list > li article span a {
   text-decoration: none;
 }
-.app-list > li article section {
+.app-list > li article section,
+.app-list > li article footer {
   display: none;
 }
 .app-list > li:hover article {
@@ -102,7 +113,8 @@ figure img {
 .app-list > li:hover article h4 a {
   text-decoration: underline;
 }
-.app-list > li:hover article section {
+.app-list > li:hover article section,
+.app-list > li:hover article footer {
   display: block;
 }
 @media (min-width: 1200px) {
