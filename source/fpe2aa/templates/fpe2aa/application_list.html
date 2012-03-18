@@ -1,12 +1,13 @@
 {% extends "base.html" %}
 {% load thumbnail %}
 
+{% block header %}
+<section class="well">
+    <h1>Liste de toutes les applications</h1>
+    <p>Retrouvez ici toutes les applications que nous avons listé pour vous</p>
+</section>
+{% endblock %}
+
 {% block main %}
-<ul>
-    <li><a href="/">Retour à l'accueil</a></li>
-</ul>
-<h1>Liste des applications</h1>
-
-{% include "fpe2aa/includes/applications.html" with applications=object_list %}
-
+    {% include "fpe2aa/includes/applications.html" with applications=object_list %}
 {% endblock main %}
