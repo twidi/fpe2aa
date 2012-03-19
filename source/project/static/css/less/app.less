@@ -61,8 +61,24 @@ figure {
     }
 }
 
+.carousel-control-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 46px;
+    left: 15px;
+    z-index: 3;
+    &.right {
+        left: auto;
+        right: 15px;
+    }
+    .carousel-control {
+        left: 0;
+    }
+}
 .carousel-caption {
     color: white;
+    z-index: 4;
     h4 {
         margin-bottom: 1ex;
     }
