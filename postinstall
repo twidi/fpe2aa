@@ -1,0 +1,19 @@
+#!/bin/sh
+
+dotcloud_get_env() {
+    sed -n "/$1/ s/.*: \"\(.*\)\".*/\1/p" < "$HOME/environment.json"
+}
+
+setup_www() {
+    cd $HOME/current/source
+    ./manage.py syncdb --noinput
+    mkdir -p /home/dotcloud/data/media /home/dotcloud/data/static
+    ./manage.py collectstatic -l --noinput -i less -i bs -i "*.sh" -i "*.json*" -i "*.html"
+}
+
+service_name=`dotcloud_get_env SERVICE_NAME`
+
+if [ "$service_name" = "www" ]
+then
+    setup_www
+fi
