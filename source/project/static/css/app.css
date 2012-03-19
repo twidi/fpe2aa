@@ -183,6 +183,15 @@ figure img {
 #filter-hint b:first-child {
   display: none;
 }
+@media (max-width: 479px) {
+  .carousel-control-container {
+    left: 0;
+  }
+  .carousel-control-container.right {
+    left: auto;
+    right: 0;
+  }
+}
 @media (min-width: 980px) {
   #filter-hint {
     margin-right: 2em;
