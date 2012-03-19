@@ -9,7 +9,6 @@ pip-log.txt
 /src
 *.vim
 *.sqlite
-settings_rules.py
 dump*.json
 .sass-cache
 .tmp
