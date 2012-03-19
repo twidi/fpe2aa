@@ -43,9 +43,11 @@
             <span class="icon-bar"></span>
         </a>
         <a class="brand" href="/">Presid-apps</a>
-        <ul class="nav">
-            <li{% if section == 'about' %} class="active"{% endif %}><a href="{% url about %}">À propos</a></li>
-        </ul>
+        <div class="nav-collapse">
+            <ul class="nav">
+                <li{% if section == 'about' %} class="active"{% endif %}><a href="{% url about %}">À propos</a></li>
+            </ul>
+        </div>
         <div class="nav-collapse">
             <ul class="nav pull-right">
                 {% include "fpe2aa/includes/filter-bar.html" %}
