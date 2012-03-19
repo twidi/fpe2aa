@@ -134,6 +134,7 @@ INSTALLED_APPS = (
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = DEFAULT_SETTINGS.TEMPLATE_CONTEXT_PROCESSORS + (
+    'project.context_processors.settings',
     'fpe2aa.context_processors.filters',
 )
 
@@ -169,6 +170,9 @@ LOGGING = {
 # thumbnails
 THUMBNAIL_SUBDIR = 'thumbs'
 THUMBNAIL_EXTENSION = 'png'
+
+# other
+ANALYTICS_CODE = 'UA-00000-0'
 
 # metasettings
 try:
