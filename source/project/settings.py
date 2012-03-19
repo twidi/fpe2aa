@@ -1,7 +1,8 @@
 # Django settings for project project.
 
 import django.conf.global_settings as DEFAULT_SETTINGS
-import os
+import os, sys
+
 PROJECT_PATH = os.path.dirname(__file__)
 BASE_PATH = os.path.normpath(os.path.join(PROJECT_PATH, '../'))
 
@@ -9,7 +10,6 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    ('Twidi', 's.angel+fpe2aa@twidi.com'),
 )
 
 MANAGERS = ADMINS
@@ -169,3 +169,24 @@ LOGGING = {
 # thumbnails
 THUMBNAIL_SUBDIR = 'thumbs'
 THUMBNAIL_EXTENSION = 'png'
+
+# metasettings
+try:
+    import metasettings
+    METASETTINGS_DIR    = os.path.normpath(os.path.join(PROJECT_PATH, 'settings'))
+    try:
+        from settings_rules import method, rules
+    except ImportError, e:
+        raise e
+    else:
+        METASETTINGS_PATTERNS = rules
+        METASETTINGS_METHOD = getattr(metasettings, method)
+        metasettings.init(globals())
+except Exception, e:
+    sys.stderr.write("Error while loading metasettings : %s\n" % e )
+    try:
+        from local_settings import *
+    except ImportError, e:
+        sys.stderr.write("Error: You should define your own settings, see settings_rules.py.sample (or just add a local_settings.py)\nError was : %s\n" % e)
+        sys.exit(1)
+
