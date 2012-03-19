@@ -156,6 +156,27 @@ figure img {
 .app-list > li:hover article footer {
   display: block;
 }
+#filter-hint {
+  float: right;
+  margin-right: 1.5em;
+}
+#filter-hint .full-only {
+  display: none;
+}
+#filter-hint b:first-child {
+  display: none;
+}
+@media (min-width: 980px) {
+  #filter-hint {
+    margin-right: 2em;
+  }
+  #filter-hint .full-only {
+    display: inline;
+  }
+  #filter-hint b:first-child {
+    display: inline-block;
+  }
+}
 @media (min-width: 1200px) {
   .container > header .well h1 small {
     display: inline;

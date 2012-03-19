@@ -135,6 +135,29 @@ figure {
     }
 }
 
+#filter-hint {
+    float: right;
+    margin-right: 1.5em;
+    .full-only {
+        display: none;
+    }
+    b:first-child {
+        display: none;
+    }
+}
+
+@media (min-width: 980px) {
+    #filter-hint {
+        margin-right: 2em;
+        .full-only {
+            display: inline;
+        }
+        b:first-child {
+            display: inline-block;
+        }
+    }
+}
+
 @media (min-width: 1200px) {
     .container > header .well h1 small {
         display: inline;
