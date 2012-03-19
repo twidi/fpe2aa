@@ -11,7 +11,7 @@ html{overflow-y:scroll;}
 .navbar .dropdown-menu li img{float:right;}
 .container>header .well{overflow:auto;}.container>header .well h1{margin-bottom:0.5ex;}.container>header .well h1 small{display:block;line-height:30px;}
 .container>header .well a.btn{font-weight:bold;float:right;}
-figure{margin:0;}figure a{display:block;}
+figure{margin:0;}figure a{display:block;text-align:center;}
 figure img{max-width:100%;}
 .carousel-caption{color:white;}.carousel-caption h4{margin-bottom:1ex;}
 .carousel-caption span{font-weight:normal;font-size:smaller;}.carousel-caption span a{text-decoration:underline;}

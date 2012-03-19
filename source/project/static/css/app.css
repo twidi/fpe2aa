@@ -70,6 +70,7 @@ figure {
 }
 figure a {
   display: block;
+  text-align: center;
 }
 figure img {
   max-width: 100%;
