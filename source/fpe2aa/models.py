@@ -4,7 +4,7 @@ from django.db import models
 
 from easy_thumbnails.fields import ThumbnailerImageField
 
-from fpe2aa.managers import LowerNameMOrderedanager
+from fpe2aa.managers import OnlineApplicationsManager
 
 class Platform(models.Model):
     """
@@ -15,7 +15,8 @@ class Platform(models.Model):
     name = models.CharField(max_length=255)
     slug = models.SlugField(max_length=255, help_text="For the Platform's url")
 
-    objects = LowerNameMOrderedanager()
+    class Meta:
+        ordering = ('slug',)
 
     def __unicode__(self):
         return self.name
@@ -23,6 +24,12 @@ class Platform(models.Model):
     @models.permalink
     def get_absolute_url(self):
         return ('platform_detail', (), dict(slug=self.slug))
+
+    def online_applications(self):
+        """
+        Return all online applications for this platform
+        """
+        return Application.online_only.filter(platforms=self)
 
 
 class AppType(models.Model):
@@ -33,7 +40,8 @@ class AppType(models.Model):
     name = models.CharField(max_length=255)
     slug = models.SlugField(max_length=255, help_text="For the AppType's url")
 
-    objects = LowerNameMOrderedanager()
+    class Meta:
+        ordering = ('slug',)
 
     def __unicode__(self):
         return self.name
@@ -41,6 +49,12 @@ class AppType(models.Model):
     @models.permalink
     def get_absolute_url(self):
         return ('type_detail', (), dict(slug=self.slug))
+
+    def online_applications(self):
+        """
+        Return all online applications for this type
+        """
+        return Application.online_only.filter(types=self)
 
 
 def image_name_from_slug(base_dir):
@@ -71,7 +85,8 @@ class Author(models.Model):
             resize_source=dict(size=(70, 0), crop='smart'),
         )
 
-    objects = LowerNameMOrderedanager()
+    class Meta:
+        ordering = ('slug',)
 
     def __unicode__(self):
         return self.name
@@ -79,6 +94,12 @@ class Author(models.Model):
     @models.permalink
     def get_absolute_url(self):
         return ('author_detail', (), dict(slug=self.slug))
+
+    def online_applications(self):
+        """
+        Return all online applications for this author
+        """
+        return Application.online_only.filter(authors=self)
 
 
 class Application(models.Model):
@@ -102,7 +123,11 @@ class Application(models.Model):
             resize_source=dict(size=(1170, 0), crop='smart'),
         )
 
-    objects = LowerNameMOrderedanager()
+    objects = models.Manager()
+    online_only = OnlineApplicationsManager()
+
+    class Meta:
+        ordering = ('slug',)
 
     def __unicode__(self):
         return self.name
