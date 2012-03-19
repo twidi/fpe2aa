@@ -75,8 +75,24 @@ figure a {
 figure img {
   max-width: 100%;
 }
+.carousel-control-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 46px;
+  left: 15px;
+  z-index: 3;
+}
+.carousel-control-container.right {
+  left: auto;
+  right: 15px;
+}
+.carousel-control-container .carousel-control {
+  left: 0;
+}
 .carousel-caption {
   color: white;
+  z-index: 4;
 }
 .carousel-caption h4 {
   margin-bottom: 1ex;
@@ -166,6 +182,15 @@ figure img {
 }
 #filter-hint b:first-child {
   display: none;
+}
+@media (max-width: 479px) {
+  .carousel-control-container {
+    left: 0;
+  }
+  .carousel-control-container.right {
+    left: auto;
+    right: 0;
+  }
 }
 @media (min-width: 980px) {
   #filter-hint {
