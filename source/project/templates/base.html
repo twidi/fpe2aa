@@ -78,6 +78,7 @@
   <script src="{{ STATIC_URL }}js/script.js"></script>
   <!-- end scripts -->
 
+  {% if ANALYTICS_CODE %}
   <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
        mathiasbynens.be/notes/async-analytics-snippet -->
   <script>
@@ -86,6 +87,7 @@
     g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
     s.parentNode.insertBefore(g,s)}(document,'script'));
   </script>
+  {% endif %}
 
   {% block js %}{% endblock %}
 </body>

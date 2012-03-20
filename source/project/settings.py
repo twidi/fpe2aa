@@ -172,7 +172,7 @@ THUMBNAIL_SUBDIR = 'thumbs'
 THUMBNAIL_EXTENSION = 'png'
 
 # other
-ANALYTICS_CODE = 'UA-00000-0'
+ANALYTICS_CODE = None
 
 # metasettings
 try:
