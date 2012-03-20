@@ -92,7 +92,7 @@ html {
     .well {
         overflow: auto;
         h1 {
-            margin-bottom: 0.5ex;
+            margin-bottom: 8px; // was 0.5ex => crash webkit
             small {
                 display: block;
                 line-height: 30px;
@@ -145,7 +145,7 @@ figure {
     color: white;
     z-index: 4;
     h4 {
-        margin-bottom: 1ex;
+        margin-bottom: 8px; // was 1ex => crash webkit
     }
     span {
         font-weight: normal;
