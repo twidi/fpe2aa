@@ -119,6 +119,8 @@ html {
   float: right;
 }
 figure {
+  min-height: 80px;
+  background: white;
   margin: 0;
 }
 figure a {
@@ -127,6 +129,9 @@ figure a {
 }
 figure img {
   max-width: 100%;
+}
+.carousel figure {
+  min-height: 200px;
 }
 .carousel-control-container {
   position: absolute;
