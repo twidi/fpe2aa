@@ -1,3 +1,5 @@
+from math import ceil
+
 from fpe2aa.models import Author, Platform, AppType
 
 def filters(request):
@@ -28,4 +30,5 @@ def filters(request):
         types = AppType.objects.all(),
         filter_type = filter_type,
         filter = filter,
+        nb_authors_per_cols = int(ceil(Author.objects.count()/3.0)),
     )

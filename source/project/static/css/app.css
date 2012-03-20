@@ -48,9 +48,45 @@ html {
   background: #222;
 }
 /* End of tweak */
-.navbar .dropdown-menu li img {
+/* Put authors in 3 columns in dropdown menu when enough place */
+.dropdown.authors {
+  position: static;
+}
+.dropdown.authors .dropdown-menu {
+  width: 662px;
+  right: -20px !important;
+  vertical-align: top;
+}
+.dropdown.authors .dropdown-menu:after {
+  left: 50% !important;
+  right: auto !important;
+}
+.dropdown.authors ul.unstyled {
+  width: 220px;
+  display: inline-block;
+  vertical-align: top;
+  border-right: solid #ccc 1px;
+}
+.dropdown.authors ul.unstyled li span {
+  margin-right: 50px;
+}
+.dropdown.authors ul.unstyled li img {
   float: right;
 }
+.dropdown.authors ul.unstyled:last-child {
+  border: none;
+}
+@media (max-width: 767px) {
+  .dropdown.authors .dropdown-menu {
+    width: auto;
+  }
+  .dropdown.authors ul.unstyled {
+    display: block;
+    width: auto;
+    border: none;
+  }
+}
+/* end  authors in enough place */
 .container > header .well {
   overflow: auto;
 }
