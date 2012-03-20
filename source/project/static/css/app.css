@@ -143,6 +143,9 @@ figure img {
   left: 15px;
   z-index: 3;
 }
+.carousel-control-container span {
+  top: 20%;
+}
 .carousel-control-container.right {
   left: auto;
   right: 15px;
