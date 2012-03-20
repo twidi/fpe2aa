@@ -14,7 +14,6 @@ DATABASES = {
 }
 
 MEDIA_ROOT = '/home/dotcloud/data/media/'
-STATIC_ROOT = '/home/dotcloud/data/static/'
 
 SECRET_KEY = env.get('DJANGO_SECRET_KEY', 'presidc)u6kx&j*q*dx@!-38q3t99)7q64x*y9^8i881ssse4!^&64tdapps')
 

@@ -7,7 +7,8 @@ dotcloud_get_env() {
 setup_www() {
     cd $HOME/current/source
     ./manage.py syncdb --noinput
-    mkdir -p /home/dotcloud/data/media /home/dotcloud/data/static
+    mkdir -p /home/dotcloud/data/media
+    rm -fr static/*
     ./manage.py collectstatic -l --noinput -i less -i bs -i "*.sh" -i "*.json*" -i "*.html"
 }
 
