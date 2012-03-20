@@ -118,7 +118,7 @@ figure img {
   font-size: 13px;
   color: #333;
 }
-.app-list > li {
+.app-row > li {
   -webkit-box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
@@ -135,26 +135,26 @@ figure img {
   border-radius: 5px;
   margin-bottom: 20px;
 }
-.app-list > li img {
+.app-row > li img {
   max-width: 100%;
 }
-.app-list > li article {
+.app-row > li article {
   padding: 5px 10px;
   -webkit-border-radius: 0 0 5px 5px;
   -moz-border-radius: 0 0 5px 5px;
   border-radius: 0 0 5px 5px;
 }
-.app-list > li article h4 {
+.app-row > li article h4 {
   margin-bottom: 0;
 }
-.app-list > li article span a {
+.app-row > li article span a {
   text-decoration: none;
 }
-.app-list > li article section,
-.app-list > li article footer {
+.app-row > li article section,
+.app-row > li article footer {
   display: none;
 }
-.app-list > li:hover article {
+.app-row > li:hover article {
   background: rgba(0, 0, 0, 0.9);
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -163,14 +163,14 @@ figure img {
   bottom: auto;
   top: 0;
 }
-.app-list > li:hover article h4 {
+.app-row > li:hover article h4 {
   margin-bottom: 1ex;
 }
-.app-list > li:hover article h4 a {
+.app-row > li:hover article h4 a {
   text-decoration: underline;
 }
-.app-list > li:hover article section,
-.app-list > li:hover article footer {
+.app-row > li:hover article section,
+.app-row > li:hover article footer {
   display: block;
 }
 #filter-hint {
