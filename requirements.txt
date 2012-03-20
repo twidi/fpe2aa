@@ -4,4 +4,5 @@ psycopg2
 easy-thumbnails
 Pil
 -e git+git://github.com/twidi/django-metasettings.git#egg=django-metasettings
+-e git+git://github.com/twidi/django-popularity.git#egg=django-popularity
 

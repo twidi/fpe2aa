@@ -14,6 +14,7 @@ urlpatterns = patterns('',
     url(r'^$', ListView.as_view(model=Application, queryset=online_applications_queryset, template_name='home.html'), name='home'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^a-propos/', direct_to_template, { 'template': 'about.html', 'extra_context': dict(section='about') }, name="about"),
+    url(r'^viewtracker/', include('popularity.urls')),
     url(r'^', include('fpe2aa.urls')),
 )
 

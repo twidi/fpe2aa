@@ -3,6 +3,7 @@ import os
 from django.db import models
 
 from easy_thumbnails.fields import ThumbnailerImageField
+import popularity
 
 from fpe2aa.managers import OnlineApplicationsManager
 
@@ -132,3 +133,4 @@ class Application(models.Model):
     def __unicode__(self):
         return self.name
 
+popularity.register(Application)
