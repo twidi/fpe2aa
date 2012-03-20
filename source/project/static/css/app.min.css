@@ -12,7 +12,7 @@ html{overflow-y:scroll;}
 .dropdown.authors ul.unstyled{width:220px;display:inline-block;vertical-align:top;border-right:solid #ccc 1px;}.dropdown.authors ul.unstyled li span{margin-right:50px;}
 .dropdown.authors ul.unstyled li img{float:right;}
 .dropdown.authors ul.unstyled:last-child{border:none;}
-@media (max-width:767px){.dropdown.authors .dropdown-menu{width:auto;} .dropdown.authors ul.unstyled{display:block;width:auto;border:none;}}.container>header .well{overflow:auto;}.container>header .well h1{margin-bottom:0.5ex;}.container>header .well h1 small{display:block;line-height:30px;}
+@media (max-width:767px){.dropdown.authors .dropdown-menu{width:auto;} .dropdown.authors ul.unstyled{display:block;width:auto;border:none;}}@media (max-width:979px){.navbar .dropdown-menu{background:white;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;padding:2px 0;}.navbar .dropdown-menu li a{-webkit-border-radius:0;-moz-border-radius:0;border-radius:0;margin-bottom:0 !important;}}.container>header .well{overflow:auto;}.container>header .well h1{margin-bottom:0.5ex;}.container>header .well h1 small{display:block;line-height:30px;}
 .container>header .well a.btn{font-weight:bold;float:right;}
 figure{margin:0;}figure a{display:block;text-align:center;}
 figure img{max-width:100%;}

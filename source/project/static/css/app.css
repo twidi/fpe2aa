@@ -87,6 +87,23 @@ html {
   }
 }
 /* end  authors in enough place */
+/* Dropdown in navbar on white background when collapsed */
+@media (max-width: 979px) {
+  .navbar .dropdown-menu {
+    background: white;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    padding: 2px 0;
+  }
+  .navbar .dropdown-menu li a {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    margin-bottom: 0 !important;
+  }
+}
+/* end of white background navbar */
 .container > header .well {
   overflow: auto;
 }
