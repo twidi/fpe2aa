@@ -129,7 +129,9 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'django.contrib.staticfiles',
+    'django_extensions',
     'easy_thumbnails',
+    'popularity',
     'fpe2aa',
 )
 
@@ -172,7 +174,7 @@ THUMBNAIL_SUBDIR = 'thumbs'
 THUMBNAIL_EXTENSION = 'png'
 
 # other
-ANALYTICS_CODE = 'UA-00000-0'
+ANALYTICS_CODE = None
 
 # metasettings
 try:

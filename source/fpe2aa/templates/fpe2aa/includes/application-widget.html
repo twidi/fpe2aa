@@ -1,6 +1,6 @@
 {% load thumbnail %}
 <figure>
-    <a href="{{ application.link }}" target="_blank" title="Aller sur {{ application.link }}">
+    <a href="{{ application.link }}" target="_blank" title="Aller sur {{ application.link }}" class="app-link" data-app-slug="{{ application.slug }}" data-app-id="{{ application.id }}">
         {% with img=application.screenshot %}
         <img src="{% if mode == "full" %}{{ img.url }}{% else %}{% thumbnail img 260x0 %}{% endif %}" alt="Aperçu de l'application {{ application.name }}"/>
         {% endwith %}
@@ -10,7 +10,7 @@
 <article class="carousel-caption">
     <header>
         <h4>{% spaceless %}
-            <a href="{{ application.link }}" target="_blank">{{ application.name }}</a>
+            <a href="{{ application.link }}" target="_blank" class="app-link" data-app-slug="{{ application.slug }}" data-app-id="{{ application.id }}">{{ application.name }}</a>
             {% if authors %}
                 <span>
                     (par {% for author in authors %}<a href="{{ author.get_absolute_url }}">{{ author }}</a>{% if not forloop.last %}, {% endif %}{% endfor %})
@@ -21,7 +21,7 @@
     <section>
         <p>
             {{ application.description }}
-            <a href="{{ application.link }}" target="_blank" class="btn btn-mini">Aller &raquo;</a>
+            <a href="{{ application.link }}" target="_blank" class="btn btn-mini app-link" data-app-slug="{{ application.slug }}" data-app-id="{{ application.id }}">Aller &raquo;</a>
         </p>
     </section>
     <footer>
