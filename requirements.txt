@@ -1,3 +1,4 @@
+django-extensions
 psycopg2
 -e git+git://github.com/django/django#egg=django
 easy-thumbnails
