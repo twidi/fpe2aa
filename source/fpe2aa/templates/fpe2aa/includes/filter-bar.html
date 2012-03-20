@@ -1,16 +1,22 @@
 {% load thumbnail %}
 <li><p class="navbar-text">Filter par : </p></li>
 
-<li class="dropdown{% if filter_type == 'author' %} active{% endif %}">
+<li class="dropdown authors{% if filter_type == 'author' %} active{% endif %}">
     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Auteurs<b class="caret"></b></a>
-    <ul class="dropdown-menu">
+    <section class="dropdown-menu">{% spaceless %}
         {% for author in authors %}
-            <li{% if filter_type == 'author' and filter == author.slug %} class="active"{% endif %}><a href="{{ author.get_absolute_url }}"><img src="{% thumbnail author.logo 0x18 %}" /> {{ author }}</a></li>
+            {% if forloop.first or forloop.counter0|divisibleby:nb_authors_per_cols %}
+                <ul class="unstyled">
+            {% endif %}
+            <li{% if filter_type == 'author' and filter == author.slug %} class="active"{% endif %}><a href="{{ author.get_absolute_url }}"><img src="{% thumbnail author.logo 0x18 %}" /><span>{{ author }}</span></a></li>
+            {% if forloop.last or forloop.counter|divisibleby:nb_authors_per_cols %}
+            </ul>
+            {% endif %}
         {% endfor %}
-    </ul>
+    {% endspaceless %}</section>
 </li>
 
-<li class="dropdown{% if filter_type == 'platform' %} active{% endif %}">
+<li class="dropdown platforms{% if filter_type == 'platform' %} active{% endif %}">
     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Plate-formes<b class="caret"></b></a>
     <ul class="dropdown-menu">
         {% for platform in platforms %}
@@ -19,7 +25,7 @@
     </ul>
 </li>
 
-<li class="dropdown{% if filter_type == 'type' %} active{% endif %}">
+<li class="dropdown types{% if filter_type == 'type' %} active{% endif %}">
     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Types<b class="caret"></b></a>
     <ul class="dropdown-menu">
         {% for type in types %}

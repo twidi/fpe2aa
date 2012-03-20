@@ -27,9 +27,64 @@ html {
 }
 /* End of tweak */
 
-.navbar .dropdown-menu li img {
-    float: right;
+/* Put authors in 3 columns in dropdown menu when enough place */
+.dropdown.authors {
+    position: static;
+    .dropdown-menu {
+        width: 662px;
+        right: -20px !important;
+        vertical-align: top;
+        &:after {
+            left: 50% !important;
+            right: auto !important;
+        }
+    }
+    ul.unstyled {
+        width: 220px;
+        display: inline-block;
+        vertical-align: top;
+        border-right: solid #ccc 1px;
+        li {
+            span {
+                margin-right: 50px;
+            }
+            img {
+                float: right;
+            }
+        }
+        &:last-child {
+            border: none;
+        }
+    }
 }
+@media (max-width: 767px) {
+    .dropdown.authors {
+        .dropdown-menu {
+            width: auto;
+        }
+        ul.unstyled {
+            display: block;
+            width: auto;
+            border: none;
+        }
+    }
+}
+/* end  authors in enough place */
+
+/* Dropdown in navbar on white background when collapsed */
+@media (max-width: 979px) {
+    .navbar .dropdown-menu {
+        background: white;
+        .border-radius(3px);
+        padding: 2px 0;
+        li a {
+            .border-radius(0);
+            margin-bottom: 0 !important;
+        }
+    }
+}
+/* end of white background navbar */
+
 
 .container > header {
 //    background: url("../img/header.png") no-repeat 50% 0 transparent;
