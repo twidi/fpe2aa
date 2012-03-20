@@ -1,13 +1,13 @@
 <section class="app-list row">
     {% for application in applications %}
         {% if forloop.first or forloop.counter0|divisibleby:4 %}
-            <ul class="unstyled app-row">
+            <ul class="unstyled app-row"><!--
         {% endif %}
-        <li class="span3">
+        --><li class="span3">
             {% include "fpe2aa/includes/application-widget.html" %}
-        </li>
+        </li><!--
         {% if forloop.last or forloop.counter|divisibleby:4 %}
-            </ul>
+        --></ul>
         {% endif %}
     {% endfor %}
 </section>

@@ -118,12 +118,17 @@ figure img {
   font-size: 13px;
   color: #333;
 }
+.app-row {
+  vertical-align: top;
+}
 .app-row > li {
   -webkit-box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
   position: relative;
   display: inline-block;
+  float: none;
+  vertical-align: top;
   padding: 5px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
