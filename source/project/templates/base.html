@@ -7,6 +7,11 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
+  {% if PROD %}
+      <link rel="dns-prefetch" href="//thumb.presid-apps.fr">
+      <link rel="dns-prefetch" href="//css.static.presid-apps.fr">
+      <link rel="dns-prefetch" href="//js.static.presid-apps.fr">
+  {% endif %}
 
   <!-- Use the .htaccess and remove these lines to avoid edge case issues.
        More info: h5bp.com/i/378 -->
@@ -20,19 +25,26 @@
 
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
 
-  <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css">
+  <link rel="stylesheet" href="{{ STATIC_URL_CSS }}css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ STATIC_URL_CSS }}css/app.min.css">
 
   <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
 
   <script type="text/javascript">
+      // some settings
       var ANALYTICS_CODE = "{{ ANALYTICS_CODE|default:'' }}",
           APP_CID = "{{ APP_CID|default:'' }}";
+      {% if PROD %}
+          // preload loader image
+          var img = document.createElement('IMG');
+          img.src = '{{ STATIC_URL_CSS }}img/ajax-loader.gif';
+      {% endif %}
   </script>
 
   <!-- All JavaScript at the bottom, except this Modernizr build.
        Modernizr enables HTML5 elements & feature detects for optimal performance.
        Create your own custom Modernizr build: www.modernizr.com/download/ -->
-  <script src="{{ STATIC_URL }}js/libs/modernizr-2.5.3.min.js"></script>
+  <script src="{{ STATIC_URL_JS }}js/libs/modernizr-2.5.3.min.js"></script>
 </head>
 <body>
   <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
@@ -74,14 +86,9 @@
   </div>
 
   <!-- JavaScript at the bottom for fast page loading -->
-
-  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
-  <!--script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script-->
-  <script>window.jQuery || document.write('<script src="{{ STATIC_URL }}js/libs/jquery-1.7.1.min.js"><\/script>')</script>
-
-  <!-- scripts concatenated and minified via build script -->
-  <script src="{{ STATIC_URL }}js/plugins.js"></script>
-  <script src="{{ STATIC_URL }}js/script.js"></script>
+  <script src="{{ STATIC_URL_JS }}js/libs/jquery-1.7.1.min.js"></script>
+  <script src="{{ STATIC_URL_JS }}js/plugins.js"></script>
+  <script src="{{ STATIC_URL_JS }}js/script.js"></script>
   <!-- end scripts -->
 
   {% if ANALYTICS_CODE %}
