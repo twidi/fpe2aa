@@ -7,4 +7,5 @@ class OnlineApplicationsManager(models.Manager):
 
     def get_query_set(self):
         qs = super(OnlineApplicationsManager, self).get_query_set()
+        qs = qs.prefetch_related('authors', 'types', 'platforms')
         return qs.filter(online=True)
