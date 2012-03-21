@@ -33,7 +33,7 @@
         {% endif %}
         {% if types %}
             <div>
-                <b>Type{{ types|length|pluralize }}</b> :
+                <b>Catégorie{{ types|length|pluralize }}</b> :
                 {% for type in types %}<a href="{{ type.get_absolute_url }}">{{ type }}</a>{% if not forloop.last %}, {% endif %}{% endfor %}
             </div>
         {% endif %}
