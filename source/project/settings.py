@@ -97,6 +97,8 @@ TEMPLATE_LOADERS = (
 )
 
 MIDDLEWARE_CLASSES = (
+    'johnny.middleware.LocalStoreClearMiddleware',
+    'johnny.middleware.QueryCacheMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -168,6 +170,21 @@ LOGGING = {
         },
     }
 }
+
+# caching
+CACHES = {
+    'default': dict(
+        BACKEND = 'django.core.cache.backends.locmem.LocMemCache',
+        LOCATION = 'default',
+    ),
+    'johnny': dict(
+        BACKEND = 'johnny.backends.locmem.LocMemCache',
+        LOCATION = 'johnny',
+        JOHNNY_CACHE = True,
+    ),
+}
+JOHNNY_MIDDLEWARE_KEY_PREFIX='jc'
+
 
 # thumbnails
 THUMBNAIL_SUBDIR = 'thumbs'
