@@ -108,7 +108,7 @@ html {
   overflow: auto;
 }
 .container > header .well h1 {
-  margin-bottom: 8px;
+  text-align: center;
 }
 .container > header .well h1 small {
   display: block;
@@ -117,6 +117,14 @@ html {
 .container > header .well a.btn {
   font-weight: bold;
   float: right;
+}
+#intro p {
+  line-height: 1.5em;
+  margin-bottom: 15px;
+}
+#intro p:first-letter {
+  font-weight: bold;
+  font-size: larger;
 }
 figure {
   min-height: 80px;

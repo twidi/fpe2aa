@@ -92,7 +92,7 @@ html {
     .well {
         overflow: auto;
         h1 {
-            margin-bottom: 8px; // was 0.5ex => crash webkit
+            text-align: center;
             small {
                 display: block;
                 line-height: 30px;
@@ -101,6 +101,17 @@ html {
         a.btn {
             font-weight: bold;
             float: right;
+        }
+    }
+}
+
+#intro {
+    p {
+        line-height: 1.5em;
+        margin-bottom: 15px;
+        &:first-letter {
+            font-weight: bold;
+            font-size: larger;
         }
     }
 }

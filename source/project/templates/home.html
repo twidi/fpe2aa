@@ -2,27 +2,31 @@
 
 {% block header %}
 <section class="well">
-    <a class="btn btn-inverse" href="{% url application_list %}">Voir toutes les applications &raquo;</a>
     <h1>
         Présid-apps
         <small>Une sélection non exhaustive d'applications en relation avec la présidentielle 2012.</small>
     </h1>
-    <p>
-        De nombreux sites fleurissent ces temps-ci, permettant une approche différente de la présidentielle.
-    </p>
-    <p>
-        Parmi ces sites, généralement édités par des journaux, nous retrouvons des tests de connaissances, des aides au choix, des analyses des discours des candidats, etc.
-    </p>
-    <p>
-        Vous retrouverez ces différentes applications dans le carousel ci-dessous, ou bien en utilisant les filtres que nous vous proposons en haut à droite.
-    </p>
 </section>
 {% endblock %}
 
 {% block main %}
 
 <div class="row">
-<section id="carousel" class="carousel span12">
+<section id="intro" class="span3">
+    <div class="well">
+        <p>
+            De nombreux sites fleurissent ces temps-ci, permettant une approche différente de la présidentielle.
+        </p>
+        <p>
+            Parmi ces sites, généralement édités par des journaux, nous retrouvons des tests de connaissances, des aides au choix, des analyses des discours des candidats, etc.
+        </p>
+        <p>
+            Vous retrouverez ces différentes applications dans le carousel ci-contre, ou bien en utilisant les filtres que nous vous proposons en haut à droite.
+        </p>
+        <a class="btn btn-inverse" href="{% url application_list %}">Voir toutes les applications &raquo;</a>
+    </div>
+</section>
+<section id="carousel" class="carousel span9">
     <ul class="unstyled carousel-inner">
         {% for application in object_list %}
             <li class="item{% if forloop.first %} active{% endif %}">
