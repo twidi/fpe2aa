@@ -1,4 +1,14 @@
 $(document).ready(function(){
+
+    $('li.dropdown.authors li a').each(function() {
+        var a = $(this)
+            img_src = a.data('img-src');
+        if (img_src) {
+            a.prepend($('<img/>').attr('src', img_src));
+        }
+    });
+
+
     $('a.app-link').click(function() {
         var link = $(this),
             app_slug = link.data('app-slug'),
