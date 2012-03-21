@@ -107,9 +107,6 @@ html {
 .container > header .well {
   overflow: auto;
 }
-.container > header .well h1 {
-  text-align: center;
-}
 .container > header .well h1 small {
   display: block;
   line-height: 30px;
@@ -121,10 +118,6 @@ html {
 #intro p {
   line-height: 1.5em;
   margin-bottom: 15px;
-}
-#intro p:first-letter {
-  font-weight: bold;
-  font-size: larger;
 }
 figure {
   min-height: 80px;
