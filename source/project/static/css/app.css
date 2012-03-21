@@ -104,6 +104,46 @@ html {
   }
 }
 /* end of white background navbar */
+#flag {
+  height: 20px;
+  background: white;
+  position: relative;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+#flag span {
+  width: 33.33333%;
+  display: block;
+  height: 20px;
+  position: absolute;
+  top: 0;
+}
+#flag span.blue {
+  background: blue;
+  left: 0;
+}
+#flag span.red {
+  background: red;
+  right: 0;
+}
+#flag:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(34, 34, 34, 0.19999999999999996);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(44, 44, 44, 0)), color-stop(75%, rgba(44, 44, 44, 0)), to(#222222));
+  background-image: -webkit-linear-gradient(rgba(44, 44, 44, 0), rgba(44, 44, 44, 0) 75%, #222222);
+  background-image: -moz-linear-gradient(top, rgba(44, 44, 44, 0), rgba(44, 44, 44, 0) 75%, #222222);
+  background-image: -ms-linear-gradient(rgba(44, 44, 44, 0), rgba(44, 44, 44, 0) 75%, #222222);
+  background-image: -o-linear-gradient(rgba(44, 44, 44, 0), rgba(44, 44, 44, 0) 75%, #222222);
+  background-image: linear-gradient(rgba(44, 44, 44, 0), rgba(44, 44, 44, 0) 75%, #222222);
+  background-repeat: no-repeat;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='rgba(44, 44, 44, 0)', endColorstr='#222222', GradientType=0);
+  background-color: transparent;
+}
 .container > header .well {
   overflow: auto;
 }
