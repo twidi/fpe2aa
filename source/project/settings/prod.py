@@ -13,4 +13,5 @@ ADMINS = (
 )
 MANAGERS = ADMINS
 
+THUMBNAIL_MEDIA_URL = 'http://thumb.presid-apps.fr/media/'
 
