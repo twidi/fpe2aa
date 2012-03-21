@@ -171,6 +171,9 @@ LOGGING = {
     }
 }
 
+# session
+SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
+
 # caching
 CACHES = {
     'default': dict(
