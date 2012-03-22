@@ -18,6 +18,9 @@ html {
         &.open .dropdown-menu {
             display: block;
         }
+        > a {
+            padding-right: 5px !important;
+        }
     }
     .navbar-text {
         line-height: 39px;
@@ -26,10 +29,52 @@ html {
         background: #222;
     }
 }
+@media (min-width: 980px) and (max-width: 1199px) {
+    .navbar {
+        .nav {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+        }
+        .navbar-inner {
+            padding-right: 5px;
+            padding-left: 10px;
+        }
+        .brand {
+            padding-right: 10px;
+        }
+    }
+}
+
 /* End of tweak */
 html.no-js .navbar .pull-right {
     display: none;
 }
+
+.navbar li.share {
+    > div, > iframe {
+        margin-top: 10px !important;
+    }
+}
+@media (min-width: 1200px) {
+    .navbar .divider-vertical {
+        margin-right: 19px;
+    }
+}
+@media (min-width: 980px) and (max-width: 1199px) {
+    .navbar li.share {
+        overflow: hidden;
+        &.twitter {
+            width: 100px
+        }
+        &.facebook {
+            width: 80px;
+        }
+        &.google {
+            width: 70px;
+        }
+    }
+}
+
 
 /* Put authors in 3 columns in dropdown menu when enough place */
 .dropdown.authors {
@@ -120,6 +165,13 @@ html.no-js .navbar .pull-right {
         right: 0;
         #gradient > .vertical-three-colors(rgba(44, 44, 44, 0), rgba(44, 44, 44, 0.0), 75%, @navbarBackground);
         background-color: transparent;
+    }
+}
+
+@media (min-width: 980px) and (max-width: 1199px) {
+    #flag {
+        margin-right: -5px;
+        margin-left: -10px;
     }
 }
 

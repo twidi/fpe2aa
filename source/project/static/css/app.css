@@ -40,6 +40,9 @@ html {
 .navbar .dropdown.open .dropdown-menu {
   display: block;
 }
+.navbar .dropdown > a {
+  padding-right: 5px !important;
+}
 .navbar .navbar-text {
   line-height: 39px;
 }
@@ -47,9 +50,45 @@ html {
 .navbar .nav .active > .dropdown-toggle {
   background: #222;
 }
+@media (min-width: 980px) and (max-width: 1199px) {
+  .navbar .nav {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .navbar .navbar-inner {
+    padding-right: 5px;
+    padding-left: 10px;
+  }
+  .navbar .brand {
+    padding-right: 10px;
+  }
+}
 /* End of tweak */
 html.no-js .navbar .pull-right {
   display: none;
+}
+.navbar li.share > div,
+.navbar li.share > iframe {
+  margin-top: 10px !important;
+}
+@media (min-width: 1200px) {
+  .navbar .divider-vertical {
+    margin-right: 19px;
+  }
+}
+@media (min-width: 980px) and (max-width: 1199px) {
+  .navbar li.share {
+    overflow: hidden;
+  }
+  .navbar li.share.twitter {
+    width: 100px;
+  }
+  .navbar li.share.facebook {
+    width: 80px;
+  }
+  .navbar li.share.google {
+    width: 70px;
+  }
 }
 /* Put authors in 3 columns in dropdown menu when enough place */
 .dropdown.authors {
@@ -146,6 +185,12 @@ html.no-js .navbar .pull-right {
   background-repeat: no-repeat;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='rgba(44, 44, 44, 0)', endColorstr='#222222', GradientType=0);
   background-color: transparent;
+}
+@media (min-width: 980px) and (max-width: 1199px) {
+  #flag {
+    margin-right: -5px;
+    margin-left: -10px;
+  }
 }
 .container > header .well {
   overflow: auto;
