@@ -48,6 +48,9 @@ html {
   background: #222;
 }
 /* End of tweak */
+html.no-js .navbar .pull-right {
+  display: none;
+}
 /* Put authors in 3 columns in dropdown menu when enough place */
 .dropdown.authors {
   position: static;
@@ -296,6 +299,9 @@ html.no-js .carousel-control-container {
   display: none;
 }
 #filter-hint b:first-child {
+  display: none;
+}
+html.no-js #filter-hint {
   display: none;
 }
 @media (min-width: 768px) and (max-width: 979px) {

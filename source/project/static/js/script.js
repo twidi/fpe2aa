@@ -9,9 +9,16 @@ $(document).ready(function(){
     important_images = $.extend({}, important_images, {
         loaded: 0,
         total: important_images.container.find('figure').length,
+        logos_loaded: false,
 
         load_logos: function() {
             /* Load all logos tkong data from the surrouding a */
+            if (important_images.load_logos_timer) {
+                clearTimeout(important_images.load_logos_timer);
+                important_images.load_logos_timer = null;
+            }
+            if (important_images.logos_loaded) { return; }
+            important_images.logos_loaded = true;
             $('li.dropdown.authors li a').each(function() {
                 var a = $(this)
                     img_src = a.data('img-src');
@@ -88,11 +95,13 @@ $(document).ready(function(){
 
         }, // carousel
 
+        load_logos_timer: null,
         run: function() {
             if (important_images.total) {
+                important_images.load_logos_timer = setTimeout(important_images.load_logos, 30000);
                 important_images.container.find('figure img').load(important_images.on_img_loaded);
             } else {
-                important_load_logos();
+                important_images.load_logos();
             }
             if (carousel.length) {
                 important_images.carousel.run();
