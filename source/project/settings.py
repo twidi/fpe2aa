@@ -119,7 +119,6 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    os.path.normpath(os.path.join(PROJECT_PATH, 'templates')),
 )
 
 INSTALLED_APPS = (
@@ -137,10 +136,11 @@ INSTALLED_APPS = (
     'easy_thumbnails',
     'popularity',
     'fpe2aa',
+    'project.core',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = DEFAULT_SETTINGS.TEMPLATE_CONTEXT_PROCESSORS + (
-    'project.context_processors.settings',
+    'project.core.context_processors.settings',
     'fpe2aa.context_processors.filters',
 )
 
