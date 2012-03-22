@@ -11,4 +11,5 @@ def settings(request):
         STATIC_URL_JS = django_settings.STATIC_URL_JS,
         STATIC_URL_CSS = django_settings.STATIC_URL_CSS,
         THUMB_WIDTHS = [870, 712, 538, 440, 260],
+        REQUEST_PATH = request.get_full_path(),
     )
