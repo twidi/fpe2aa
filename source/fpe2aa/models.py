@@ -126,9 +126,10 @@ class Application(models.Model):
 
     objects = models.Manager()
     online_only = OnlineApplicationsManager()
+    rank = models.FloatField(default=0.0, db_index=True)
 
     class Meta:
-        ordering = ('slug',)
+        ordering = ('-rank', 'slug',)
 
     def __unicode__(self):
         return self.name
