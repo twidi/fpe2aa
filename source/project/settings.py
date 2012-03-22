@@ -197,6 +197,7 @@ THUMBNAIL_EXTENSION = 'png'
 
 # other
 ANALYTICS_CODE = None
+POPULARITY_COMPATABILITY_OVERRIDE = ('django.db.backends.postgresql_psycopg2',)
 
 # metasettings
 try:
