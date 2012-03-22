@@ -1,0 +1,14 @@
+{% load thumbnail %}
+<h1>Thumbnails generation</h1>
+{% for application in object_list %}
+    {% if application.screenshot %}
+        <h2>{{ application }}</h2>
+        {% for width in THUMB_WIDTHS %}
+            <h3>{{ width }}</h3>
+            {% with size=width|upper|add:'x0' %}
+                <img src="{% thumbnail application.screenshot size %}" />
+            {% endwith %}
+        {% endfor %}
+    {% endif %}
+{% endfor %}
+

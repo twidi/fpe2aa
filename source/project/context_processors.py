@@ -10,4 +10,5 @@ def settings(request):
         PROD = django_settings.PROD,
         STATIC_URL_JS = django_settings.STATIC_URL_JS,
         STATIC_URL_CSS = django_settings.STATIC_URL_CSS,
+        THUMB_WIDTHS = [870, 712, 538, 440, 260],
     )
