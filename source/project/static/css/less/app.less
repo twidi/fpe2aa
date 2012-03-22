@@ -1,0 +1,390 @@
+@import "mixins.less";
+@import "variables.less";
+
+
+html {
+    overflow-y: scroll;
+}
+
+/* Tweak twitter-bootstrap navbar */
+.navbar {
+    .nav-collapse.in {
+        height: auto !important;
+    }
+    .dropdown {
+        .dropdown-menu {
+            display: none;
+        }
+        &.open .dropdown-menu {
+            display: block;
+        }
+        > a {
+            padding-right: 5px !important;
+        }
+    }
+    .navbar-text {
+        line-height: 39px;
+    }
+    .nav .open.active, .nav .active > .dropdown-toggle {
+        background: #222;
+    }
+}
+@media (min-width: 980px) {
+    .navbar {
+        height: 50px;
+    }
+}
+@media (min-width: 980px) and (max-width: 1199px) {
+    .navbar {
+        .nav {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+        }
+        .navbar-inner {
+            padding-right: 5px;
+            padding-left: 10px;
+        }
+        .brand {
+            padding-right: 10px;
+        }
+    }
+}
+
+/* End of tweak */
+html.no-js .navbar .pull-right {
+    display: none;
+}
+
+.navbar li.share {
+    height: 35px;
+    overflow: hidden;
+    > div, > iframe {
+        margin-top: 10px !important;
+    }
+}
+@media (min-width: 1200px) {
+    .navbar .divider-vertical {
+        margin-right: 19px;
+    }
+}
+@media (min-width: 980px) and (max-width: 1199px) {
+    .navbar li.share {
+        overflow: hidden;
+        &.twitter {
+            width: 100px
+        }
+        &.facebook {
+            width: 80px;
+        }
+        &.google {
+            width: 70px;
+        }
+    }
+}
+
+
+/* Put authors in 3 columns in dropdown menu when enough place */
+.dropdown.authors {
+    position: static;
+    .dropdown-menu {
+        width: 662px;
+        right: -20px !important;
+        vertical-align: top;
+        &:after {
+            left: 50% !important;
+            right: auto !important;
+        }
+    }
+    ul.unstyled {
+        width: 220px;
+        display: inline-block;
+        vertical-align: top;
+        border-right: solid #ccc 1px;
+        li {
+            span {
+                margin-right: 50px;
+            }
+            img {
+                float: right;
+            }
+        }
+        &:last-child {
+            border: none;
+        }
+    }
+}
+@media (max-width: 767px) {
+    .dropdown.authors {
+        .dropdown-menu {
+            width: auto;
+        }
+        ul.unstyled {
+            display: block;
+            width: auto;
+            border: none;
+        }
+    }
+}
+/* end  authors in enough place */
+
+/* Dropdown in navbar on white background when collapsed */
+@media (max-width: 979px) {
+    .navbar .dropdown-menu {
+        background: white;
+        .border-radius(3px);
+        padding: 2px 0;
+        li a {
+            .border-radius(0);
+            margin-bottom: 0 !important;
+        }
+    }
+}
+/* end of white background navbar */
+
+@flag_height: 10px;
+#flag {
+    height: @flag_height;
+    background: white;
+    position: relative;
+    margin-left: -20px;
+    margin-right: -20px;
+    span {
+        width: 33.33333%;
+        display: block;
+        height: @flag_height;
+        position: absolute;
+        top: 0;
+    }
+    span.blue {
+        background: blue;
+        left: 0;
+    }
+    span.red {
+        background: red;
+        right: 0;
+    }
+    &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        #gradient > .vertical-three-colors(rgba(44, 44, 44, 0), rgba(44, 44, 44, 0.0), 75%, @navbarBackground);
+        background-color: transparent;
+    }
+}
+
+@media (min-width: 980px) and (max-width: 1199px) {
+    #flag {
+        margin-right: -5px;
+        margin-left: -10px;
+    }
+}
+
+.container > header {
+//    background: url("../img/header.png") no-repeat 50% 0 transparent;
+//    padding-top: 50px;
+    .well {
+        overflow: auto;
+        h1 {
+            small {
+                display: block;
+                line-height: 30px;
+            }
+        }
+        a.btn {
+            font-weight: bold;
+            float: right;
+        }
+    }
+}
+
+#intro {
+    p {
+        line-height: 1.5em;
+        margin-bottom: 15px;
+    }
+}
+
+figure {
+    min-height: 80px;
+    background: url('../img/ajax-loader.gif') no-repeat center 5px white;
+    margin: 0;
+    a {
+        display: block;
+        text-align: center;
+        color: #ccc;
+        color: transparent;
+    }
+    img {
+        width: 100%;
+    }
+}
+.carousel figure {
+    min-height: 200px;
+    span {
+        display: none;
+    }
+}
+
+.carousel-control-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 46px;
+    left: 15px;
+    z-index: 3;
+    span {
+        top: 20%;
+    }
+    &.right {
+        left: auto;
+        right: 15px;
+    }
+    .carousel-control {
+        left: 0;
+    }
+}
+html.no-js .carousel-control-container {
+    display: none;
+}
+
+.carousel-caption {
+    color: white;
+    z-index: 4;
+    h4 {
+        margin-bottom: 8px; // was 1ex => crash webkit
+    }
+    span {
+        font-weight: normal;
+        font-size: smaller;
+        a {
+            text-decoration: underline;
+        }
+    }
+    a {
+        color: white;
+    }
+    footer {
+        border-top: solid #666 1px;
+        padding-top: 5px;
+        a {
+            text-decoration: underline;
+        }
+    }
+    .btn {
+        font-size: 13px;
+        color: #333;
+    }
+}
+
+.app-row {
+    vertical-align: top;
+    > li {
+        .box-shadow(4px 4px 8px rgba(0, 0, 0, 0.5));
+        position: relative;
+        display: inline-block;
+        float: none;
+        vertical-align: top;
+        padding: 5px;
+        .box-sizing(border-box);
+        background: black;
+        .border-radius(5px);
+        margin-bottom: 20px;
+        img {
+            max-width: 100%;
+        }
+        article {
+            padding: 5px 10px;
+            .border-radius(0 0 5px 5px);
+            h4 {
+                margin-bottom: 0;
+            }
+            span a {
+                text-decoration: none;
+            }
+            section, footer {
+               display: none
+            }
+        }
+        &:hover {
+            article {
+                background: rgba(0, 0, 0, 0.9);
+                .border-radius(5px);
+                padding-top: 10px;
+                bottom: auto;
+                top: 0;
+                h4 {
+                    margin-bottom: 1ex;
+                    a {
+                        text-decoration: underline;
+                    }
+                }
+                section, footer {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+#filter-hint {
+    float: right;
+    margin-right: 1.5em;
+    .full-only {
+        display: none;
+    }
+    b:first-child {
+        display: none;
+    }
+}
+html.no-js #filter-hint {
+    display: none;
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+    .carousel-caption {
+        position: static;
+    }
+    .app-row > li:hover .carousel-caption {
+        position: absolute;
+    }
+}
+
+@media (max-width: 479px) {
+    .carousel-control-container {
+        left: 0;
+        &.right {
+            left: auto;
+            right: 0;
+        }
+    }
+}
+
+@media (min-width: 980px) {
+    #filter-hint {
+        margin-right: 2em;
+        .full-only {
+            display: inline;
+        }
+        b:first-child {
+            display: inline-block;
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .container > header .well h1 small {
+        display: inline;
+        line-height: 36px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .app-list {
+        > li {
+            margin-bottom: 30px;
+        }
+    }
+}

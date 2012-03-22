@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+
+{% block header %}
+<section class="well">
+<h1>Applications de type <em>{{ object }}</em></h1>
+</section>
+{% endblock %}
+
+{% block main %}
+    {% include "fpe2aa/includes/applications.html" with applications=object.online_applications %}
+{% endblock main %}

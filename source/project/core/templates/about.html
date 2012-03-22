@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block header %}
+<section class="well">
+    <h1>À propos de <em>Présid-apps</em></h1>
+</section>
+{% endblock %}
+
+{% block main %}
+<section class="row">
+
+    <article class="span4">
+        <h2>Généralités</h2>
+        <p>
+            <strong>Présid-apps</strong> est un petit site sans prétention visant à référencer les applications web et mobile traitant de la présidentielle française de 2012.
+        </p>
+        <p>
+            Il est édité par <a href="http://twidi.com">Stéphane Angel</a>, et hébergé sur <a href="http://www.dotcloud.com">dotcloud.com</a>
+        </p>
+    </article>
+
+    <article class="span4">
+        <h2>Contact</h2>
+        <p>
+            Pour toute remarque sur le contenu (auteurs, catégories...) ou <strong>pour proposer de nouvelles applications</strong>, vous pouvez me contacter via Twitter : <a href="http://twitter.com/twidi">@Twidi</a>.
+            <br />
+            Les petits tweets rigolos seront peut-être lus en priorité, tout dépend de l'âge du capitaine ;)
+        </p>
+    </article>
+
+    <article class="span4">
+        <h2>Technique</h2>
+        <p>
+            Ce site est développé en <a href="http://djangoproject.com">Django</a>, utilisant <a href="http://html5boilerplate.com">html5 boilerplate</a> et <a href="http://twitter.github.com/bootstrap/">twitter bootstrap</a> pour l'interface.
+        </p>
+        <p>
+            Le code source est disponible sur <a href="http://github.com/twidi/fpe2aa">http://github.com/twidi/fpe2aa</a>.
+        </p>
+    </article>
+
+</section>
+
+{% endblock %}

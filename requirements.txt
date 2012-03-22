@@ -1,0 +1,9 @@
+django-extensions
+psycopg2
+-e git+git://github.com/django/django#egg=django
+easy-thumbnails
+Pil
+-e git+git://github.com/twidi/django-metasettings.git#egg=django-metasettings
+-e git+git://github.com/twidi/django-popularity.git#egg=django-popularity
+-e hg+http://bitbucket.org/jmoiron/johnny-cache/#egg=johnny-cache
+

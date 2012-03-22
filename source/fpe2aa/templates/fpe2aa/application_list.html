@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+
+{% block header %}
+<section class="well">
+    <span id="filter-hint"><b class="icon-arrow-up"> </b>Vous pouvez filtrer en utilisant le<span class="full-only">s</span> menu<span class="full-only">s</span> ci-dessus <b class="icon-arrow-up"> </b></span>
+    <h1>Liste de toutes les applications</h1>
+    <p>Retrouvez ici toutes les applications que nous avons listé pour vous</p>
+</section>
+{% endblock %}
+
+{% block main %}
+    {% include "fpe2aa/includes/applications.html" with applications=object_list %}
+{% endblock main %}

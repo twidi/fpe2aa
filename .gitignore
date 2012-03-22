@@ -1,0 +1,15 @@
+*.pyc
+*.pyo
+.*.sw?
+.directory
+pip-log.txt
+/bin
+/include
+/lib
+/src
+*.vim
+*.sqlite
+dump*.json
+.sass-cache
+.tmp
+

@@ -1,0 +1,49 @@
+{% load thumbnail %}
+<figure>
+    <a href="{{ application.link }}" target="_blank" title="Aller sur {{ application.link }}" class="app-link" data-app-slug="{{ application.slug }}" data-app-id="{{ application.id }}">
+        {% with img=application.screenshot %}
+            {% if mode == "full" %}
+
+                <span data-img-src="{% thumbnail img 440x0 %}" data-img-alt="Aperçu de l'application {{ application.name }}"></span>
+                <noscript><img src="{% thumbnail img 870x0 %}" alt="Aperçu de l'application {{ application.name }}"/></noscript>
+            {% else %}
+                <img src="{% thumbnail img 260x0 %}" alt="Aperçu de l'application {{ application.name }}"/>
+            {% endif %}
+        {% endwith %}
+    </a>
+</figure>
+{% with authors=application.authors.all platforms=application.platforms.all types=application.types.all %}
+<article class="carousel-caption">
+    <header>
+        <h4>{% spaceless %}
+            <a href="{{ application.link }}" target="_blank" class="app-link" data-app-slug="{{ application.slug }}" data-app-id="{{ application.id }}">{{ application.name }}</a>
+            {% if authors %}
+                <span>
+                    (par {% for author in authors %}<a href="{{ author.get_absolute_url }}">{{ author }}</a>{% if not forloop.last %}, {% endif %}{% endfor %})
+                </span>
+            {% endif %}
+            {% endspaceless %}</h4>
+    </header>
+    <section>
+        <p>
+            {{ application.description }}
+            <a href="{{ application.link }}" target="_blank" class="btn btn-mini app-link" data-app-slug="{{ application.slug }}" data-app-id="{{ application.id }}">Aller &raquo;</a>
+        </p>
+    </section>
+    <footer>
+        {% if platforms %}
+            <div>
+                <b>Plate-forme{{ platforms|length|pluralize }}</b> :
+                {% for platform in platforms %}<a href="{{ platform.get_absolute_url }}">{{ platform }}</a>{% if not forloop.last %}, {% endif %}{% endfor %}
+            </div>
+        {% endif %}
+        {% if types %}
+            <div>
+                <b>Catégorie{{ types|length|pluralize }}</b> :
+                {% for type in types %}<a href="{{ type.get_absolute_url }}">{{ type }}</a>{% if not forloop.last %}, {% endif %}{% endfor %}
+            </div>
+        {% endif %}
+    </footer>
+</article>
+{% endwith %}
+
