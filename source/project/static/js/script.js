@@ -111,6 +111,7 @@ $(document).ready(function(){
 
     important_images.run();
 
+
     $('a.app-link').click(function() {
         var link = $(this),
             app_slug = link.data('app-slug'),
@@ -123,6 +124,17 @@ $(document).ready(function(){
             $.get('/viewtracker/' + APP_CID + '/' + app_id +'/');
         }
     });
+
+
+    if (carousel.length) {
+        carousel.delegate('a.carousel-control-container', 'click', function() {
+            if (ANALYTICS_CODE && typeof(_gaq) != 'undefined') {
+                var a = $(this);
+                _gaq.push(['_trackEvent', 'Carousel', 'slide-' + a.data('slide'), carousel.find('li.item:visible figure a').data('app-slug')]);
+            }
+        });
+    }
+
 });
 
 
