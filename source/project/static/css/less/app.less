@@ -29,6 +29,11 @@ html {
         background: #222;
     }
 }
+@media (min-width: 980px) {
+    .navbar {
+        height: 50px;
+    }
+}
 @media (min-width: 980px) and (max-width: 1199px) {
     .navbar {
         .nav {
@@ -51,6 +56,8 @@ html.no-js .navbar .pull-right {
 }
 
 .navbar li.share {
+    height: 35px;
+    overflow: hidden;
     > div, > iframe {
         margin-top: 10px !important;
     }

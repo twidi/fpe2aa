@@ -9,8 +9,8 @@ html{overflow-y:scroll;}
 .navbar .dropdown>a{padding-right:5px !important;}
 .navbar .navbar-text{line-height:39px;}
 .navbar .nav .open.active,.navbar .nav .active>.dropdown-toggle{background:#222;}
-@media (min-width:980px) and (max-width:1199px){.navbar .nav{margin-left:0 !important;margin-right:0 !important;} .navbar .navbar-inner{padding-right:5px;padding-left:10px;} .navbar .brand{padding-right:10px;}}html.no-js .navbar .pull-right{display:none;}
-.navbar li.share>div,.navbar li.share>iframe{margin-top:10px !important;}
+@media (min-width:980px){.navbar{height:50px;}}@media (min-width:980px) and (max-width:1199px){.navbar .nav{margin-left:0 !important;margin-right:0 !important;} .navbar .navbar-inner{padding-right:5px;padding-left:10px;} .navbar .brand{padding-right:10px;}}html.no-js .navbar .pull-right{display:none;}
+.navbar li.share{height:35px;overflow:hidden;}.navbar li.share>div,.navbar li.share>iframe{margin-top:10px !important;}
 @media (min-width:1200px){.navbar .divider-vertical{margin-right:19px;}}@media (min-width:980px) and (max-width:1199px){.navbar li.share{overflow:hidden;}.navbar li.share.twitter{width:100px;} .navbar li.share.facebook{width:80px;} .navbar li.share.google{width:70px;}}.dropdown.authors{position:static;}.dropdown.authors .dropdown-menu{width:662px;right:-20px !important;vertical-align:top;}.dropdown.authors .dropdown-menu:after{left:50% !important;right:auto !important;}
 .dropdown.authors ul.unstyled{width:220px;display:inline-block;vertical-align:top;border-right:solid #ccc 1px;}.dropdown.authors ul.unstyled li span{margin-right:50px;}
 .dropdown.authors ul.unstyled li img{float:right;}

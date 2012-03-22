@@ -50,6 +50,11 @@ html {
 .navbar .nav .active > .dropdown-toggle {
   background: #222;
 }
+@media (min-width: 980px) {
+  .navbar {
+    height: 50px;
+  }
+}
 @media (min-width: 980px) and (max-width: 1199px) {
   .navbar .nav {
     margin-left: 0 !important;
@@ -66,6 +71,10 @@ html {
 /* End of tweak */
 html.no-js .navbar .pull-right {
   display: none;
+}
+.navbar li.share {
+  height: 35px;
+  overflow: hidden;
 }
 .navbar li.share > div,
 .navbar li.share > iframe {
