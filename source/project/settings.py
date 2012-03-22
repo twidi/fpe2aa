@@ -8,6 +8,7 @@ BASE_PATH = os.path.normpath(os.path.join(PROJECT_PATH, '../'))
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
+PROD = False
 
 ADMINS = (
 )
@@ -69,6 +70,7 @@ STATIC_ROOT = os.path.normpath(os.path.join(BASE_PATH, 'static'))
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
 STATIC_URL = '/static/'
+STATIC_URL_JS = STATIC_URL_CSS = STATIC_URL
 
 # Additional locations of static files
 STATICFILES_DIRS = (

@@ -8,7 +8,13 @@
             {% if forloop.first or forloop.counter0|divisibleby:nb_authors_per_cols %}
                 <ul class="unstyled">
             {% endif %}
-            <li{% if filter_type == 'author' and filter == author.slug %} class="active"{% endif %}><a href="{{ author.get_absolute_url }}"><img src="{% thumbnail author.logo 0x18 %}" /><span>{{ author }}</span></a></li>
+                <li{% if filter_type == 'author' and filter == author.slug %} class="active"{% endif %}>
+                    {% thumbnail author.logo 0x18 as logo_thumbnail %}
+                    <a href="{{ author.get_absolute_url }}"{% if author.logo %} data-img-src="{{ logo_thumbnail.url }}"{% endif %}>
+                        <noscript><img src="{{ logo_thumbnail.url }}" /></noscript>
+                        <span>{{ author }}</span>
+                    </a>
+                </li>
             {% if forloop.last or forloop.counter|divisibleby:nb_authors_per_cols %}
             </ul>
             {% endif %}

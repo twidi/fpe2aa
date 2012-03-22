@@ -1,5 +1,6 @@
 DEBUG = False
 TEMPLATE_DEBUG = False
+PROD = True
 
 TEMPLATE_LOADERS = (
     ('django.template.loaders.cached.Loader', (
@@ -14,4 +15,6 @@ ADMINS = (
 MANAGERS = ADMINS
 
 THUMBNAIL_MEDIA_URL = 'http://thumb.presid-apps.fr/media/'
+STATIC_URL_JS = 'http://js.static.presid-apps.fr/static/'
+STATIC_URL_CSS = 'http://css.static.presid-apps.fr/static/'
 

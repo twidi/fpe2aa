@@ -27,6 +27,9 @@ html {
     }
 }
 /* End of tweak */
+html.no-js .navbar .pull-right {
+    display: none;
+}
 
 /* Put authors in 3 columns in dropdown menu when enough place */
 .dropdown.authors {
@@ -156,11 +159,14 @@ figure {
         color: transparent;
     }
     img {
-        max-width: 100%;
+        width: 100%;
     }
 }
 .carousel figure {
     min-height: 200px;
+    span {
+        display: none;
+    }
 }
 
 .carousel-control-container {
@@ -181,6 +187,10 @@ figure {
         left: 0;
     }
 }
+html.no-js .carousel-control-container {
+    display: none;
+}
+
 .carousel-caption {
     color: white;
     z-index: 4;
@@ -269,6 +279,9 @@ figure {
     b:first-child {
         display: none;
     }
+}
+html.no-js #filter-hint {
+    display: none;
 }
 
 @media (min-width: 768px) and (max-width: 979px) {
