@@ -2,7 +2,13 @@
 <figure>
     <a href="{{ application.link }}" target="_blank" title="Aller sur {{ application.link }}" class="app-link" data-app-slug="{{ application.slug }}" data-app-id="{{ application.id }}">
         {% with img=application.screenshot %}
-            <img src="{% if mode == "full" %}{% thumbnail img 870x0 %}{% else %}{% thumbnail img 260x0 %}{% endif %}" alt="Aperçu de l'application {{ application.name }}"/>
+            {% if mode == "full" %}
+
+                <span data-img-src="{% thumbnail img 440x0 %}" data-img-alt="Aperçu de l'application {{ application.name }}"></span>
+                <noscript><img src="{% thumbnail img 870x0 %}" alt="Aperçu de l'application {{ application.name }}"/></noscript>
+            {% else %}
+                <img src="{% thumbnail img 260x0 %}" alt="Aperçu de l'application {{ application.name }}"/>
+            {% endif %}
         {% endwith %}
     </a>
 </figure>

@@ -171,10 +171,13 @@ figure a {
   color: transparent;
 }
 figure img {
-  max-width: 100%;
+  width: 100%;
 }
 .carousel figure {
   min-height: 200px;
+}
+.carousel figure span {
+  display: none;
 }
 .carousel-control-container {
   position: absolute;
@@ -193,6 +196,9 @@ figure img {
 }
 .carousel-control-container .carousel-control {
   left: 0;
+}
+html.no-js .carousel-control-container {
+  display: none;
 }
 .carousel-caption {
   color: white;
