@@ -10,6 +10,7 @@ setup_www() {
     mkdir -p /home/dotcloud/data/media
     rm -fr static/*
     ./manage.py collectstatic -l --noinput -i less -i bs -i "*.sh" -i "*.json*" -i "*.html"
+    crontab $HOME/current/crontabs
 }
 
 service_name=`dotcloud_get_env SERVICE_NAME`
