@@ -5,7 +5,7 @@
 
 {% block header %}
 <section class="well">
-    <h1>Applications de <em>{{ object }}</em> <a href="{{ object.link }}" target="_blank"><img src="{{ author.logo.url }}" /></a></h1>
+<h1>Applications de <em>{{ object }}</em>{% if author.logo %} <a href="{{ object.link }}" target="_blank"><img src="{{ author.logo.url }}" /></a>{% endif %}</h1>
     </section>
 {% endblock %}
 
