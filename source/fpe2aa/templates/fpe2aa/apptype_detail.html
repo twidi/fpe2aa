@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 
-{% block title %}{{ object }} - {{ block.super }}{% endblock %}
-{% block description %}Applications présidentielle de type {{ object }}{% endblock %}
+{% block title %}{{ type }} - {{ block.super }}{% endblock %}
+{% block description %}Applications présidentielle de type {{ type }}{% endblock %}
 
 {% block header %}
 <section class="well">
-<h1>Applications de type <em>{{ object }}</em></h1>
+    <h1>Applications de type <em>{{ type }}</em></h1>
 </section>
 {% endblock %}
 
 {% block main %}
-    {% include "fpe2aa/includes/applications.html" with applications=object.online_applications %}
+    {% include "fpe2aa/includes/applications.html" %}
 {% endblock main %}

@@ -285,7 +285,16 @@ html.no-js .carousel-control-container {
   font-size: 13px;
   color: #333;
 }
+#sort {
+  float: right;
+  margin-top: -55px;
+  margin-right: 8px;
+}
+html.no-js #sort {
+  display: none;
+}
 .app-row {
+  clear: both;
   vertical-align: top;
 }
 .app-row > li {

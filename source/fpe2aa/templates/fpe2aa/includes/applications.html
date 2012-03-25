@@ -1,3 +1,23 @@
+<nav id="sort" class="btn-group">
+    <a class="btn dropdown-toggle" data-toggle="dropdown">
+            Tri
+            <small>
+            {% if sort == 'name' %}
+                (nom)
+            {% elif sort == 'date' %}
+                (date)
+            {% else %}
+                (popularité)
+            {% endif %}
+            </small>
+            <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu pull-right">
+        <li{% if sort != "name" and sort != "date" %} class="active"{% endif %}><a href=".">Popularité</a></li>
+        <li{% if sort == "name" %} class="active"{% endif %}><a href=".?sort=name">Nom</a></li>
+        <li{% if sort == "date" %} class="active"{% endif %}><a href=".?sort=date">Date d'ajout</a></li>
+    </ul>
+</nav>
 <section class="app-list row">
     {% for application in applications %}
         {% if forloop.first or forloop.counter0|divisibleby:4 %}
