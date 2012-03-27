@@ -134,4 +134,9 @@ class Application(models.Model):
     def __unicode__(self):
         return self.name
 
+    @property
+    def day(self):
+        return self.date_add.date()
+
+
 popularity.register(Application)

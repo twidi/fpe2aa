@@ -293,6 +293,17 @@ html.no-js .carousel-control-container {
 html.no-js #sort {
   display: none;
 }
+.app-list.sort-date h3 {
+  border-bottom: solid 1px #eee;
+  margin-bottom: 10px;
+}
+.app-list.sort-date h3 a {
+  color: inherit;
+  cursor: default;
+}
+.app-list.sort-date h3 a:hover {
+  text-decoration: none;
+}
 .app-row {
   clear: both;
   vertical-align: top;

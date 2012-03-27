@@ -18,16 +18,20 @@
         <li{% if sort == "date" %} class="active"{% endif %}><a href=".?sort=date">Date d'ajout</a></li>
     </ul>
 </nav>
-<section class="app-list row">
-    {% for application in applications %}
-        {% if forloop.first or forloop.counter0|divisibleby:4 %}
-            <ul class="unstyled app-row"><!--
-        {% endif %}
-        --><li class="span3">
-            {% include "fpe2aa/includes/application-widget.html" %}
-        </li><!--
-        {% if forloop.last or forloop.counter|divisibleby:4 %}
-        --></ul>
-        {% endif %}
-    {% endfor %}
+<section class="app-list sort-{{ sort|default:"popularity" }}{% if sort != 'date' %} row{% endif %}">
+    {% if sort == 'date' %}
+        {% regroup applications by day as days_list %}
+        {% for day in days_list %}
+            <header>
+                {% with anchor=day.grouper|date:"Y-m-d" nb=day.list|length %}
+                    <h3 id="{{ anchor }}"><a href="#{{ anchor }}">{{ nb }} ajout{{ nb|pluralize }} le {{ day.grouper }}</a></h3>
+                {% endwith %}
+            </header>
+            <section class="row">
+                {% include "fpe2aa/includes/applications_group.html" with applications=day.list %}
+            </section>
+        {% endfor %}
+    {% else %}
+        {% include "fpe2aa/includes/applications_group.html" %}
+    {% endif %}
 </section>
