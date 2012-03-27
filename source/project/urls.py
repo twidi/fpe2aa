@@ -8,7 +8,8 @@ from django.contrib import admin
 admin.autodiscover()
 
 from fpe2aa.models import Application
-from fpe2aa.urls import online_applications_queryset
+
+online_applications_queryset = Application.online_only.all()
 
 urlpatterns = patterns('',
     url(r'^$', ListView.as_view(model=Application, queryset=online_applications_queryset, template_name='home.html'), name='home'),
