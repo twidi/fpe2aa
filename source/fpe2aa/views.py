@@ -42,7 +42,7 @@ class AppTypeView(ApplicationsView):
     def get_queryset(self):
         self._apptype = get_object_or_404(AppType, slug=self.kwargs['slug'])
         qs = super(AppTypeView, self).get_queryset()
-        return qs.filter(apptypes=self._author)
+        return qs.filter(types=self._apptype)
 
     def get_context_data(self, **kwargs):
         context = super(AppTypeView, self).get_context_data(**kwargs)
