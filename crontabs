@@ -1,1 +1,3 @@
-0 * * * * ~/current/source/manage.py popularity2rank && supervisorctl restart uwsgi
+MAILTO="s.angel+presidapps@twidi.com"
+SHELL=/bin/bash
+0 * * * * source ~/env/bin/activate && ~/current/source/manage.py popularity2rank && supervisorctl restart uwsgi

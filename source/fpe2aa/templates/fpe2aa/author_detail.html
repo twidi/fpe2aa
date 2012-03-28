@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 
-{% block title %}{{ object }} - {{ block.super }}{% endblock %}
-{% block description %}Applications présidentielle de {{ object }}{% endblock %}
+{% block title %}{{ author }} - {{ block.super }}{% endblock %}
+{% block description %}Applications présidentielle de {{ author }}{% endblock %}
 
 {% block header %}
 <section class="well">
-    <h1>Applications de <em>{{ object }}</em> <a href="{{ object.link }}" target="_blank"><img src="{{ author.logo.url }}" /></a></h1>
-    </section>
+    <h1>Applications de <em>{{ author }}</em>{% if author.logo %} <a href="{{ author.link }}" target="_blank"><img src="{{ author.logo.url }}" /></a>{% endif %}</h1>
+</section>
 {% endblock %}
 
 {% block main %}
-    {% include "fpe2aa/includes/applications.html" with applications=object.online_applications %}
+    {% include "fpe2aa/includes/applications.html" %}
 {% endblock main %}
