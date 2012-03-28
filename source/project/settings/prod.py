@@ -10,7 +10,7 @@ TEMPLATE_LOADERS = (
 )
 
 ADMINS = (
-    ('Twidi', 's.angel+presid-apps@twidi.com'),
+    ('Twidi', 's.angel+presidapps@twidi.com'),
 )
 MANAGERS = ADMINS
 
